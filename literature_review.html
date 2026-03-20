@@ -198,28 +198,31 @@
     border-top: 0.5px solid #eee;
     padding: 8px 16px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
+    flex-direction: column;
+    gap: 7px;
   }
   .ref-diff {
-    font-size: 8pt;
+    font-size: 8.5pt;
     color: #333;
-    line-height: 1.6;
-    flex: 1;
+    line-height: 1.7;
+    width: 100%;
+  }
+  .ref-links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
   }
   .ref-link {
-    font-size: 7.5pt;
+    font-size: 8pt;
     color: #534AB7;
     text-decoration: none;
-    padding: 2px 8px;
+    padding: 3px 10px;
     border-radius: 10px;
     border: 0.5px solid #EEEDFE;
     background: #EEEDFE;
     white-space: nowrap;
-    flex-shrink: 0;
   }
+  .ref-link:hover { background: #d8d6f8; }
 
   /* ── Compare table ── */
   .compare-grid {
@@ -337,7 +340,7 @@
     </div>
     <div class="ref-footer">
       <div class="ref-diff"><b style="color:#712B13;">한계:</b> 신학적·성서적 자원을 활용하지 않으며, 처방보다 진단에 집중. 현대 AI에 직접 적용하려면 해석학적 작업 필요.</div>
-      <div style="display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0;">
+      <div class="ref-links">
         <a href="https://www2.hawaii.edu/~freeman/courses/phil394/The%20Question%20Concerning%20Technology.pdf" target="_blank" class="ref-link">→ 원문 PDF</a>
         <a href="https://archive.org/details/questionconcerni00heid" target="_blank" class="ref-link">→ Internet Archive</a>
         <a href="https://www.semanticscholar.org/paper/The-question-concerning-technology-Heidegger/96a34128cba339f9672dda8c86bfbfa8d07cbebd" target="_blank" class="ref-link">→ Semantic Scholar</a>
@@ -377,7 +380,7 @@
     </div>
     <div class="ref-footer">
       <div class="ref-diff"><b style="color:#712B13;">한계:</b> 기술에 대한 과도한 비관론 경향. 성서적 영성의 처방적 자원을 충분히 개발하지 못함.</div>
-      <div style="display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0;">
+      <div class="ref-links">
         <a href="https://archive.org/details/JacquesEllulTheTechnologicalSociety" target="_blank" class="ref-link">→ Internet Archive</a>
         <a href="https://archive.org/details/TheBetrayalByTechnologyAPortraitOfJacquesEllul1992" target="_blank" class="ref-link">→ 엘륄 인터뷰 영상</a>
       </div>
@@ -424,7 +427,7 @@
     </div>
     <div class="ref-footer">
       <div class="ref-diff"><b style="color:#712B13;">한계:</b> 역사신학적 깊이와 심리학적 경험 연구 부재. 2002년 AI와 현재 생성형 AI 간의 질적 차이를 반영하지 못함.</div>
-      <div style="display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0;">
+      <div class="ref-links">
         <a href="https://www.fortresspress.com/store/product/9780800634766/In-Our-Image-Artificial-Intelligence-and-the-Human-Spirit" target="_blank" class="ref-link">→ Fortress Press</a>
         <a href="https://digitalcommons.csbsju.edu/theology_books/9/" target="_blank" class="ref-link">→ 저자 페이지</a>
         <a href="https://philpapers.org/rec/HERIOI" target="_blank" class="ref-link">→ PhilPapers</a>
@@ -464,7 +467,7 @@
     </div>
     <div class="ref-footer">
       <div class="ref-diff"><b style="color:#712B13;">한계:</b> 학술적 깊이보다 접근성을 우선. 역사신학·심리학적 분석 부재. AI보다 넓은 기술 일반을 다룸.</div>
-      <div style="display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0;">
+      <div class="ref-links">
         <a href="https://j.hn/publications/" target="_blank" class="ref-link">→ 저자 홈페이지</a>
         <a href="https://www.kregel.com/john-dyer/from-the-garden-to-the-city-rev-ed/" target="_blank" class="ref-link">→ Kregel (개정판)</a>
         <a href="https://archive.org/details/fromgardentocity0000dyer" target="_blank" class="ref-link">→ Internet Archive</a>
@@ -504,7 +507,7 @@
     </div>
     <div class="ref-footer">
       <div class="ref-diff"><b style="color:#712B13;">한계:</b> 주로 사회학·커뮤니케이션학적 접근. 신학적 평가·규범적 방향 제시 부족. AI보다 소셜미디어·인터넷 환경에 집중.</div>
-      <div style="display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0;">
+      <div class="ref-links">
         <a href="https://www.routledge.com/Digital-Religion-Understanding-Religious-Practice-in-Digital-Media/Campbell-Tsuria/p/book/9780367272364" target="_blank" class="ref-link">→ Routledge (2022)</a>
         <a href="https://www.drheidicampbell.com/research" target="_blank" class="ref-link">→ 저자 홈페이지</a>
       </div>
@@ -548,7 +551,9 @@
     </div>
     <div class="ref-footer">
       <div class="ref-diff"><b style="color:#712B13;">한계:</b> 범종교적·추상적 개념에 머물러 성서적 전통의 구체적 자원 미활용. 단일 저자 문헌 연구로 학제간 통합 없음. 역사적·경험적 검증 부재.</div>
-      <a href="https://doi.org/10.22955/ace.26.2.202305.55" target="_blank" class="ref-link">→ DOI 원문</a>
+      <div class="ref-links">
+        <a href="https://doi.org/10.22955/ace.26.2.202305.55" target="_blank" class="ref-link">→ DOI 원문</a>
+      </div>
     </div>
   </div>
 
@@ -589,7 +594,7 @@
       </div>
     </div>
     <div class="ref-footer">
-      <div style="display:flex; gap:6px; flex-wrap:wrap;">
+      <div class="ref-links">
         <a href="https://www.sciencedirect.com/science/article/pii/S245195882500260X" target="_blank" class="ref-link">→ AI Dependency Scale</a>
         <a href="https://www.mentalhealthjournal.org/articles/minds-in-crisis-how-the-ai-revolution-is-impacting-mental-health.html" target="_blank" class="ref-link">→ Minds in Crisis</a>
         <a href="https://www.tandfonline.com/doi/full/10.1080/2331186X.2025.2549787" target="_blank" class="ref-link">→ Academic Crisis</a>
