@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>선행연구 상세 검토 — AI 시대 인간 실존의 위기와 영성적 재구성</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    font-size: 10pt;
+    color: #1a1a1a;
+    background: #f5f5f3;
+    line-height: 1.6;
+  }
+
+  .page {
+    width: 210mm;
+    margin: 0 auto;
+    padding: 14mm 18mm 18mm;
+    background: white;
+  }
+
+  @media screen and (max-width: 900px) {
+    .page { width: 100%; padding: 20px 16px 40px; }
+  }
+  @media screen and (max-width: 640px) {
+    body { font-size: 11pt; }
+    .page { padding: 16px 14px 32px; }
+    h1 { font-size: 14pt !important; }
+    .nav-bar { flex-direction: column; gap: 8px; }
+    .layer-grid { grid-template-columns: 1fr !important; }
+    .compare-grid { grid-template-columns: 1fr !important; }
+  }
+  @media print {
+    body { background: white; }
+    .page { width: 210mm; padding: 12mm 16mm; margin: 0; }
+    .no-print { display: none; }
+    @page { size: A4; margin: 0; }
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 0.5px solid #ddd;
+  }
+  .nav-link {
+    font-size: 8.5pt;
+    color: #534AB7;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border: 0.5px solid #EEEDFE;
+    background: #EEEDFE;
+    border-radius: 20px;
+    font-weight: 700;
+  }
+  .nav-link:hover { background: #d8d6f8; }
+  .nav-title { font-size: 8.5pt; color: #aaa; }
+
+  .doc-header { margin-bottom: 20px; }
+  .doc-header h1 {
+    font-size: 16pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .doc-header p { font-size: 9pt; color: #888; }
+
+  .section-label {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #aaa;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 0.5px solid #ddd;
+    margin: 18px 0;
+  }
+
+  /* ── Layer map ── */
+  .layer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .layer-card {
+    border-radius: 8px;
+    padding: 10px 12px;
+    border: 0.5px solid #eee;
+  }
+  .layer-num {
+    font-size: 8pt;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .layer-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  .layer-desc {
+    font-size: 8pt;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  /* ── Reference card ── */
+  .ref-card {
+    border: 0.5px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .ref-header {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .ref-header-left { flex: 1; }
+  .ref-category {
+    font-size: 7.5pt;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .ref-author {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 3px;
+  }
+  .ref-title {
+    font-size: 9.5pt;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    font-style: italic;
+  }
+  .ref-meta {
+    font-size: 8pt;
+    color: #aaa;
+  }
+  .ref-body {
+    background: white;
+    padding: 12px 16px;
+    border-top: 0.5px solid #eee;
+  }
+  .ref-section {
+    margin-bottom: 10px;
+  }
+  .ref-section:last-child { margin-bottom: 0; }
+  .ref-section-title {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #888;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .ref-section-body {
+    font-size: 9pt;
+    color: #333;
+    line-height: 1.75;
+  }
+  .ref-quote {
+    font-size: 8.5pt;
+    color: #555;
+    line-height: 1.7;
+    border-left: 3px solid #ddd;
+    padding-left: 10px;
+    margin: 6px 0;
+    font-style: italic;
+  }
+  .ref-footer {
+    background: #f7f7f5;
+    border-top: 0.5px solid #eee;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .ref-diff {
+    font-size: 8pt;
+    color: #333;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .ref-link {
+    font-size: 7.5pt;
+    color: #534AB7;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 0.5px solid #EEEDFE;
+    background: #EEEDFE;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── Compare table ── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .compare-col {
+    border: 0.5px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .compare-col-header {
+    padding: 8px 10px;
+    font-size: 9pt;
+    font-weight: 700;
+  }
+  .compare-col-body {
+    padding: 8px 10px;
+    background: white;
+  }
+  .compare-item {
+    font-size: 8pt;
+    color: #444;
+    line-height: 1.7;
+    padding: 3px 0;
+    border-bottom: 0.3px solid #f0f0ee;
+  }
+  .compare-item:last-child { border-bottom: none; }
+  .compare-label {
+    font-size: 7.5pt;
+    color: #aaa;
+    margin-bottom: 1px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Nav -->
+  <div class="nav-bar no-print">
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <a href="index.html" class="nav-link">← 연구계획서</a>
+      <a href="yearly_plan.html" class="nav-link">← 연차별 계획</a>
+    </div>
+    <span class="nav-title">백석대학교 기독교학문연구소 · Christian Humanities Institute</span>
+  </div>
+
+  <!-- Header -->
+  <div class="doc-header">
+    <h1>선행연구 상세 검토</h1>
+    <p>AI 시대 인간 실존의 위기와 영성적 재구성 — 이론적 토대 및 선행연구 계보</p>
+  </div>
+
+  <!-- Layer map -->
+  <div class="section-label">선행연구 층위 지도</div>
+  <div class="layer-grid">
+    <div class="layer-card" style="background:#EEEDFE; border-color:#d0cef0;">
+      <div class="layer-num" style="color:#3C3489;">층위 1 — 기술 철학적 토대</div>
+      <div class="layer-title" style="color:#3C3489;">AI를 존재 방식으로 정의</div>
+      <div class="layer-desc">하이데거·엘륄 — AI를 단순 도구가 아닌 인간 존재 방식을 규정하는 환경으로 이해하는 철학적 근거</div>
+    </div>
+    <div class="layer-card" style="background:#FAECE7; border-color:#f0c8b5;">
+      <div class="layer-num" style="color:#712B13;">층위 2 — 신학적 선행연구</div>
+      <div class="layer-title" style="color:#712B13;">AI·기술과 신학의 대화</div>
+      <div class="layer-desc">Herzfeld·Dyer·Campbell — AI/디지털 환경과 신학적 인간론·영성·종교의 관계를 다룬 국외 핵심 연구</div>
+    </div>
+    <div class="layer-card" style="background:#E6F1FB; border-color:#b8d5f0;">
+      <div class="layer-num" style="color:#0C447C;">층위 3 — 심리학적 선행연구</div>
+      <div class="layer-title" style="color:#0C447C;">AI 의존의 경험적 진단</div>
+      <div class="layer-desc">강찬석·AI 의존 연구들 — AI 시대 인간 정체성 위기와 의존 현상에 대한 국내외 선행 진단</div>
+    </div>
+  </div>
+  <div style="background:#f7f7f5; border-radius:6px; padding:9px 14px; font-size:8.5pt; color:#555; line-height:1.7;">
+    <b style="color:#1a1a1a;">본 연구의 위치:</b> 이 세 층위를 비판적으로 수용하면서, 역사신학·성서학·조직신학·심리학·기독교교육학의 통합적 방법론으로 심화·확장한다.
+  </div>
+
+  <hr class="divider">
+
+  <!-- LAYER 1 -->
+  <div class="section-label">층위 1 — 기술 철학적 토대</div>
+
+  <!-- 하이데거 -->
+  <div class="ref-card">
+    <div class="ref-header" style="background:#EEEDFE;">
+      <div class="ref-header-left">
+        <div class="ref-author" style="color:#3C3489;">Martin Heidegger</div>
+        <div class="ref-title">Die Frage nach der Technik (기술에 대한 질문)</div>
+        <div class="ref-meta">1954 · 기술 철학</div>
+      </div>
+      <span class="ref-category" style="background:#3C3489; color:white;">기술 존재론</span>
+    </div>
+    <div class="ref-body">
+      <div class="ref-section">
+        <div class="ref-section-title">핵심 주장</div>
+        <div class="ref-section-body">
+          기술은 단순한 도구나 인간의 수단이 아니다. 기술은 존재가 드러나는 방식(Weise der Entbergung) 자체를 규정한다. 현대 기술의 본질은 <b>Gestell(몰아세움)</b>로, 이는 모든 존재를 효율적으로 사용 가능한 자원(Bestand)으로 환원하는 방식이다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">Gestell의 의미</div>
+        <div class="ref-quote">
+          "몰아세움은 인간을 부르는 방식이며, 인간으로 하여금 현실적인 것을 부품으로서 주문하도록 몰아세운다."
+        </div>
+        <div class="ref-section-body">
+          현대 기술 체제 안에서 인간 자신도 최적화·측정·관리 가능한 데이터 자원으로 환원된다. 알고리즘이 "나보다 나를 더 잘 안다"는 감각, AI에게 자기이해를 외주화하는 현상은 Gestell의 현재적 표현이다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">본 연구와의 연결</div>
+        <div class="ref-section-body">
+          하이데거의 분석은 AI 의존을 "나쁜 습관"이 아닌 <b>존재론적 위기</b>로 이해하게 한다. 인간이 AI 환경 안에서 자기 자신을 잃어가는 것은 단순한 심리 문제가 아니라, 기술이 존재 방식을 규정하는 구조적 문제다. 이것이 이 연구에서 "자기 소외"를 세 층위(심리적·실존적·영성적)로 분석하는 이론적 근거다.
+        </div>
+      </div>
+    </div>
+    <div class="ref-footer">
+      <div class="ref-diff"><b style="color:#712B13;">한계:</b> 신학적·성서적 자원을 활용하지 않으며, 처방보다 진단에 집중. 현대 AI에 직접 적용하려면 해석학적 작업 필요.</div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0;">
+        <a href="https://www2.hawaii.edu/~freeman/courses/phil394/The%20Question%20Concerning%20Technology.pdf" target="_blank" class="ref-link">→ 원문 PDF</a>
+        <a href="https://archive.org/details/questionconcerni00heid" target="_blank" class="ref-link">→ Internet Archive</a>
+        <a href="https://www.semanticscholar.org/paper/The-question-concerning-technology-Heidegger/96a34128cba339f9672dda8c86bfbfa8d07cbebd" target="_blank" class="ref-link">→ Semantic Scholar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 엘륄 -->
+  <div class="ref-card">
+    <div class="ref-header" style="background:#EEEDFE;">
+      <div class="ref-header-left">
+        <div class="ref-author" style="color:#3C3489;">Jacques Ellul</div>
+        <div class="ref-title">La Technique ou l'Enjeu du Siècle (기술: 세기의 도전)</div>
+        <div class="ref-meta">1954 · 기술 사회학·신학</div>
+      </div>
+      <span class="ref-category" style="background:#3C3489; color:white;">기술 신학</span>
+    </div>
+    <div class="ref-body">
+      <div class="ref-section">
+        <div class="ref-section-title">핵심 주장</div>
+        <div class="ref-section-body">
+          기술(La Technique)은 이제 자율적 체계가 되어 인간의 통제를 벗어났다. 인간이 기술을 사용하는 것이 아니라 <b>기술이 인간을 형성한다.</b> 기술 체계는 효율성의 논리로 모든 영역을 식민화하며, 인간의 자유와 영성을 잠식한다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">하이데거와의 차이</div>
+        <div class="ref-section-body">
+          하이데거가 기술의 <b>존재론적</b> 차원을 분석했다면, 엘륄은 <b>사회학적·신학적</b> 차원을 분석했다. 엘륄은 기독교 신학자로서 기술 체계가 어떻게 성서적 자유와 충돌하는지를 직접 다룬다. 기술 체계는 인간을 하나님으로부터 분리시키는 새로운 형태의 우상이다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">본 연구와의 연결</div>
+        <div class="ref-section-body">
+          엘륄의 분석은 AI 의존이 왜 단순한 과도한 사용 문제가 아닌 <b>구조적·영성적 문제</b>인지를 신학적으로 설명한다. AI 체계가 의미·위로·자기이해를 제공하려 할 때, 이는 기술 체계가 영성의 영역을 식민화하는 현상으로 해석된다. 본 연구의 "영성의 문제" 논증의 신학적 토대.
+        </div>
+      </div>
+    </div>
+    <div class="ref-footer">
+      <div class="ref-diff"><b style="color:#712B13;">한계:</b> 기술에 대한 과도한 비관론 경향. 성서적 영성의 처방적 자원을 충분히 개발하지 못함.</div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0;">
+        <a href="https://archive.org/details/JacquesEllulTheTechnologicalSociety" target="_blank" class="ref-link">→ Internet Archive</a>
+        <a href="https://archive.org/details/TheBetrayalByTechnologyAPortraitOfJacquesEllul1992" target="_blank" class="ref-link">→ 엘륄 인터뷰 영상</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- LAYER 2 -->
+  <div class="section-label">층위 2 — 신학적 선행연구 (국외)</div>
+
+  <!-- Herzfeld -->
+  <div class="ref-card">
+    <div class="ref-header" style="background:#FAECE7;">
+      <div class="ref-header-left">
+        <div class="ref-author" style="color:#712B13;">Noreen Herzfeld</div>
+        <div class="ref-title">In Our Image: Artificial Intelligence and the Human Spirit</div>
+        <div class="ref-meta">2002 · Fortress Press · 신학·컴퓨터 과학</div>
+      </div>
+      <span class="ref-category" style="background:#712B13; color:white;">AI 신학 고전</span>
+    </div>
+    <div class="ref-body">
+      <div class="ref-section">
+        <div class="ref-section-title">연구 개요</div>
+        <div class="ref-section-body">
+          AI 분야를 신학적으로 다룬 <b>최초의 본격적 연구</b>. 허즈펠트는 신학자이자 컴퓨터 과학자로서 AI 연구의 경쟁하는 학파들이 니버·폰 라트·바르트의 신학적 인간론과 어떻게 병행하는지를 보여준다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">핵심 논증</div>
+        <div class="ref-quote">
+          "인공지능으로 자신의 이미지를 창조하려는 현대 문화의 매혹 이면에는 진정으로 인간이라는 것이 무엇인지 정의하려는 지속적인 문제의식이 있다."
+        </div>
+        <div class="ref-section-body">
+          AI 설계의 세 가지 접근(substantive, functional, relational)이 하나님의 형상(imago Dei) 해석의 세 가지 방식과 정확히 병행한다. 허즈펠트는 <b>관계적 인간론(relational anthropology)</b>이 최선의 AI 연구와 기독교 영성 모두를 위한 필요한 교정이라고 논증한다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">본 연구와의 연결</div>
+        <div class="ref-section-body">
+          허즈펠트가 2002년에 제기한 "AI가 인간의 자기이해를 어떻게 규정하는가"라는 물음을, 본 연구는 2020년대 AI 의존이 심화된 맥락에서 역사신학·성서학·심리학으로 심화한다. 특히 허즈펠트의 관계적 인간론은 본 연구의 "성서적 영성이 제공하는 관계적 자기초월" 개념의 선행적 토대다.
+        </div>
+      </div>
+    </div>
+    <div class="ref-footer">
+      <div class="ref-diff"><b style="color:#712B13;">한계:</b> 역사신학적 깊이와 심리학적 경험 연구 부재. 2002년 AI와 현재 생성형 AI 간의 질적 차이를 반영하지 못함.</div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0;">
+        <a href="https://www.fortresspress.com/store/product/9780800634766/In-Our-Image-Artificial-Intelligence-and-the-Human-Spirit" target="_blank" class="ref-link">→ Fortress Press</a>
+        <a href="https://digitalcommons.csbsju.edu/theology_books/9/" target="_blank" class="ref-link">→ 저자 페이지</a>
+        <a href="https://philpapers.org/rec/HERIOI" target="_blank" class="ref-link">→ PhilPapers</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dyer -->
+  <div class="ref-card">
+    <div class="ref-header" style="background:#FAECE7;">
+      <div class="ref-header-left">
+        <div class="ref-author" style="color:#712B13;">John Dyer</div>
+        <div class="ref-title">From the Garden to the City: The Place of Technology in the Story of God</div>
+        <div class="ref-meta">2011, 개정판 2022 · Kregel · Dallas Theological Seminary</div>
+      </div>
+      <span class="ref-category" style="background:#712B13; color:white;">성서적 기술 신학</span>
+    </div>
+    <div class="ref-body">
+      <div class="ref-section">
+        <div class="ref-section-title">연구 개요</div>
+        <div class="ref-section-body">
+          성경의 창조→타락→구속→회복의 서사 안에서 기술의 신학적 위치를 분석. 기술은 컴퓨터 시대의 발명품이 아니라 창조 때부터 인간 존재의 근본적 부분이며, 이해되지 않은 기술은 우리를 노예로 만들 수 있다고 주장한다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">핵심 논증</div>
+        <div class="ref-section-body">
+          기술은 단순히 중립적 도구가 아니라 <b>변형적 힘(transformative power)</b>을 갖는다. 기술은 우리가 세계를 보는 방식, 관계 맺는 방식, 자기를 이해하는 방식을 형성한다. 성서적 시각으로 기술을 이해할 때 비로소 기술에 의해 형성되는 것이 아니라 기술을 형성할 수 있다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">본 연구와의 연결</div>
+        <div class="ref-section-body">
+          다이어의 성서적 기술 신학은 본 연구의 RQ3(성서 텍스트가 제공하는 언어 자원)과 직접 연결된다. 그러나 다이어의 연구는 일반 교인 대상의 실천 신학 수준에 머물며, 역사신학적 깊이와 심리학적 검증이 없다. 본 연구는 이를 학제간 학술 연구 수준으로 심화한다.
+        </div>
+      </div>
+    </div>
+    <div class="ref-footer">
+      <div class="ref-diff"><b style="color:#712B13;">한계:</b> 학술적 깊이보다 접근성을 우선. 역사신학·심리학적 분석 부재. AI보다 넓은 기술 일반을 다룸.</div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0;">
+        <a href="https://j.hn/publications/" target="_blank" class="ref-link">→ 저자 홈페이지</a>
+        <a href="https://www.kregel.com/john-dyer/from-the-garden-to-the-city-rev-ed/" target="_blank" class="ref-link">→ Kregel (개정판)</a>
+        <a href="https://archive.org/details/fromgardentocity0000dyer" target="_blank" class="ref-link">→ Internet Archive</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Campbell -->
+  <div class="ref-card">
+    <div class="ref-header" style="background:#FAECE7;">
+      <div class="ref-header-left">
+        <div class="ref-author" style="color:#712B13;">Heidi A. Campbell</div>
+        <div class="ref-title">Digital Religion: Understanding Religious Practice in Digital Media</div>
+        <div class="ref-meta">2013, 개정판 2022 · Routledge · Texas A&amp;M University</div>
+      </div>
+      <span class="ref-category" style="background:#712B13; color:white;">디지털 종교학</span>
+    </div>
+    <div class="ref-body">
+      <div class="ref-section">
+        <div class="ref-section-title">연구 개요</div>
+        <div class="ref-section-body">
+          디지털 종교(Digital Religion) 연구 분야의 창시자 중 한 명. 온라인 환경이 종교적 정체성·공동체·권위·의례·구현을 어떻게 변형하는지를 체계적으로 분석한다. 모바일 앱·소셜미디어·VR에서의 종교 실천을 5대 세계 종교를 포괄하여 연구한다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">디지털 종교의 6가지 특성</div>
+        <div class="ref-section-body">
+          네트워크 공동체(networked community), 수렴적 실천(convergent practice), 다중 현실(multisite reality), 서사적 정체성(storied identity), 이동하는 권위(shifting authority), 경험적 진정성(experiential authenticity). 이 여섯 특성이 온라인·오프라인 공간에서 동시에 협상된다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">본 연구와의 연결</div>
+        <div class="ref-section-body">
+          캠벨의 디지털 종교 분석은 AI 시대 영성 경험이 어떻게 변화하는지에 대한 사회학적·커뮤니케이션학적 기술(description)을 제공한다. 그러나 캠벨은 이 변화를 기술하는 데 집중하며, 신학적·역사적·심리학적 평가는 충분하지 않다. 본 연구는 캠벨이 기술한 현상을 성서적·역사신학적 렌즈로 <b>신학적으로 진단하고 평가</b>한다.
+        </div>
+      </div>
+    </div>
+    <div class="ref-footer">
+      <div class="ref-diff"><b style="color:#712B13;">한계:</b> 주로 사회학·커뮤니케이션학적 접근. 신학적 평가·규범적 방향 제시 부족. AI보다 소셜미디어·인터넷 환경에 집중.</div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0;">
+        <a href="https://www.routledge.com/Digital-Religion-Understanding-Religious-Practice-in-Digital-Media/Campbell-Tsuria/p/book/9780367272364" target="_blank" class="ref-link">→ Routledge (2022)</a>
+        <a href="https://www.drheidicampbell.com/research" target="_blank" class="ref-link">→ 저자 홈페이지</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- LAYER 3 -->
+  <div class="section-label">층위 3 — 심리학적 선행연구</div>
+
+  <!-- 강찬석 -->
+  <div class="ref-card">
+    <div class="ref-header" style="background:#E6F1FB;">
+      <div class="ref-header-left">
+        <div class="ref-author" style="color:#0C447C;">강찬석</div>
+        <div class="ref-title">인공지능(AI)시대의 인간정체성 위기 문제와 보편적 영성을 통한 해결 가능성 탐색</div>
+        <div class="ref-meta">2023 · KCI 등재 · 국내 선행연구</div>
+      </div>
+      <span class="ref-category" style="background:#0C447C; color:white;">국내 선행연구</span>
+    </div>
+    <div class="ref-body">
+      <div class="ref-section">
+        <div class="ref-section-title">연구 개요</div>
+        <div class="ref-section-body">
+          AI 시대 인간 정체성 위기에 대한 영성적 접근 가능성을 탐색한 <b>국내 최초 연구</b>. 자성(自性)·진성(眞性)·부모성 등 동양 철학·통합심리학 언어를 활용하여 영성적 자아가 정체성의 절대 주체임을 논증한다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">핵심 논증</div>
+        <div class="ref-section-body">
+          AI 시대 정체성 위기는 정체성을 정보의 집합으로 보거나 정신을 부정하는 물리주의 관점에서 발생한다. "보편적 영성"에 기반한 진정한 정체성에 눈을 뜨면 개체적 이기심을 극복하고 AI 시대 위기를 극복할 수 있다. 영성적 자아는 자아체계에서 절대 주체이며 '참나'다.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">본 연구와의 연결 및 차별점</div>
+        <div class="ref-section-body">
+          강찬석(2023)이 "보편적 영성으로 가능하다"고 가능성을 탐색했다면, 본 연구는 <b>"성서적 영성 전통으로 어떻게 가능한가"</b>를 학제간 통합 방법론으로 실증한다. 특히 범종교적 추상 개념을 넘어 성서학·역사신학·조직신학·심리학이 협력하는 구체적 분석을 수행한다.
+        </div>
+      </div>
+    </div>
+    <div class="ref-footer">
+      <div class="ref-diff"><b style="color:#712B13;">한계:</b> 범종교적·추상적 개념에 머물러 성서적 전통의 구체적 자원 미활용. 단일 저자 문헌 연구로 학제간 통합 없음. 역사적·경험적 검증 부재.</div>
+      <a href="https://doi.org/10.22955/ace.26.2.202305.55" target="_blank" class="ref-link">→ DOI 원문</a>
+    </div>
+  </div>
+
+  <!-- AI Dependency studies -->
+  <div class="ref-card">
+    <div class="ref-header" style="background:#E6F1FB;">
+      <div class="ref-header-left">
+        <div class="ref-author" style="color:#0C447C;">AI 의존(AI Dependency) 관련 국제 연구 동향</div>
+        <div class="ref-title">심리학·임상·교육·사회학 분야 주요 연구 (2023~2025)</div>
+        <div class="ref-meta">ScienceDirect · PMC · Tandfonline · Journal of Consumer Research</div>
+      </div>
+      <span class="ref-category" style="background:#0C447C; color:white;">경험적 연구</span>
+    </div>
+    <div class="ref-body">
+      <div class="ref-section">
+        <div class="ref-section-title">심리학·정신건강</div>
+        <div class="ref-section-body">
+          AI 의존이 증가할수록 인간의 핵심 역량·자율성·대인관계가 약화됨(ScienceDirect, 2025). AI 챗봇에 대한 심리적 의존·애착 형성이 확인되며, 취약 집단(청소년·노인·정신질환자)의 위기 사례 보고(PMC, 2025). "ChatGPT 유발 정신증" 등 새로운 임상 현상 등장.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">교육</div>
+        <div class="ref-section-body">
+          대학생 32.7%가 AI 사용에서 중독적 패턴 보임. 심각한 AI 의존 학생은 GPA 평균 0.41점 낮음(Tandfonline, 2025). AI 의존이 비판적 사고·창의성 저하로 이어지는 구조 확인.
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">소비자·사회 (구조 분석)</div>
+        <div class="ref-section-body">
+          AI는 파라메트릭 환원주의(parametric reductionism)·주체성 이전(agency transference)·표현의 규제(regulated expression)라는 세 메커니즘으로 인간 경험을 제한(Journal of Consumer Research, 2024).
+        </div>
+      </div>
+      <div class="ref-section">
+        <div class="ref-section-title">공통 한계 → 본 연구의 필요성</div>
+        <div class="ref-section-body">
+          기존 연구들은 AI 의존의 심리적·행동적 결과를 충분히 진단했으나, <b>왜 인간이 AI에게 위로·의미·자기이해를 구하는가</b>라는 실존적 원인과 영성적 차원을 다루지 못한다. 본 연구는 이 공백을 메운다.
+        </div>
+      </div>
+    </div>
+    <div class="ref-footer">
+      <div style="display:flex; gap:6px; flex-wrap:wrap;">
+        <a href="https://www.sciencedirect.com/science/article/pii/S245195882500260X" target="_blank" class="ref-link">→ AI Dependency Scale</a>
+        <a href="https://www.mentalhealthjournal.org/articles/minds-in-crisis-how-the-ai-revolution-is-impacting-mental-health.html" target="_blank" class="ref-link">→ Minds in Crisis</a>
+        <a href="https://www.tandfonline.com/doi/full/10.1080/2331186X.2025.2549787" target="_blank" class="ref-link">→ Academic Crisis</a>
+        <a href="https://www.journals.uchicago.edu/doi/full/10.1086/730709" target="_blank" class="ref-link">→ AI Constrains Experience</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- NRF Note -->
+  <div style="background:#FAEEDA; border-radius:8px; padding:11px 14px; margin-bottom:14px;">
+    <div style="font-size:9pt; font-weight:700; color:#633806; margin-bottom:5px;">NRF 심사 대응 — 핵심 개념의 학술적 조작화</div>
+    <div style="font-size:8.5pt; color:#633806; line-height:1.75;">
+      본 연구에서 <b>영성(spirituality)</b>은 특정 종교 신념이 아니라, APA의 조작적 정의를 따라 <b>"자아를 초월하는 차원과의 연결 경험, 의미·목적·소속감을 추구하는 인간의 보편적 성향"</b>으로 정의된다(Pargament, 2007). 이는 인문학적 실존의 층위이자 심리·사회적 회복탄력성의 근거로, 신비주의적·신앙 고백적 개념이 아닌 학술적·경험적으로 연구 가능한 범주다. WHO 또한 건강의 4개 차원 중 하나로 영성을 포함하며(WHO, 1998), 이 연구의 대상은 그러한 보편적 인간 경험이다.
+    </div>
+  </div>
+
+  <!-- Comparison -->
+  <div class="section-label">선행연구 비교 — 본 연구의 위치</div>
+  <div class="compare-grid">
+    <div class="compare-col">
+      <div class="compare-col-header" style="background:#EEEDFE; color:#3C3489;">기존 연구들</div>
+      <div class="compare-col-body">
+        <div class="compare-item"><div class="compare-label">접근 방식</div>단일 분야 중심</div>
+        <div class="compare-item"><div class="compare-label">AI 이해</div>현상 기술 또는 도구적 이해</div>
+        <div class="compare-item"><div class="compare-label">역사적 깊이</div>부재 또는 부분적</div>
+        <div class="compare-item"><div class="compare-label">성서적 자원</div>미활용 또는 표면적</div>
+        <div class="compare-item"><div class="compare-label">경험적 검증</div>없거나 단편적</div>
+        <div class="compare-item"><div class="compare-label">처방</div>진단에 머묾</div>
+      </div>
+    </div>
+    <div class="compare-col">
+      <div class="compare-col-header" style="background:#E1F5EE; color:#085041;">본 연구</div>
+      <div class="compare-col-body">
+        <div class="compare-item"><div class="compare-label">접근 방식</div>5개 전공 학제간 통합</div>
+        <div class="compare-item"><div class="compare-label">AI 이해</div>하이데거·엘륄: 존재 방식을 규정하는 환경</div>
+        <div class="compare-item"><div class="compare-label">역사적 깊이</div>초대~종교개혁 개념사 분석</div>
+        <div class="compare-item"><div class="compare-label">성서적 자원</div>원어 텍스트 현상학적 분석</div>
+        <div class="compare-item"><div class="compare-label">경험적 검증</div>질적 연구 (IPA) 포함</div>
+        <div class="compare-item"><div class="compare-label">처방</div>통합 모델 + 실천 매뉴얼</div>
+      </div>
+    </div>
+    <div class="compare-col">
+      <div class="compare-col-header" style="background:#FAECE7; color:#712B13;">연구 공백 (본 연구 기여)</div>
+      <div class="compare-col-body">
+        <div class="compare-item">성서·역사신학적 관점에서 현대 심리학의 영성 개념을 비판적으로 고찰한 연구</div>
+        <div class="compare-item">AI 의존의 실존적 원인을 영성적으로 진단한 연구</div>
+        <div class="compare-item">한국적 맥락에서의 통합 연구</div>
+        <div class="compare-item">이론 모델 + 현장 적용 모델 동시 산출</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Bottom nav -->
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;" class="no-print">
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <a href="index.html" class="nav-link">← 연구계획서</a>
+      <a href="yearly_plan.html" class="nav-link">← 연차별 계획</a>
+    </div>
+    <span style="font-size:8pt; color:#aaa;">백석대학교 기독교학문연구소 · 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
