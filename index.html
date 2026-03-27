@@ -3,737 +3,903 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 시대 인간 실존의 위기와 영성적 재구성 — 연구계획서</title>
+<title>역사신학 융합 프로젝트</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+  :root {
+    --ink: #1a1a2e;
+    --ink-soft: #2d2d4a;
+    --parchment: #f7f4ee;
+    --parchment-dark: #ede9df;
+    --gold: #8b6914;
+    --gold-light: #c4982a;
+    --rust: #8b3a2a;
+    --sage: #4a6741;
+    --accent: #5c4a8a;
+    --line: rgba(139,105,20,0.2);
+  }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-    font-size: 10pt;
-    color: #1a1a1a;
-    background: white;
-    line-height: 1.6;
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
   }
 
-  .page {
-    width: 210mm;
-    min-height: 297mm;
-    margin: 0 auto;
-    padding: 16mm 18mm;
-    background: white;
-  }
-
-  @media screen and (max-width: 900px) {
-    .page {
-      width: 100%;
-      min-height: unset;
-      padding: 20px 18px 40px;
-    }
-  }
-
-  @media screen and (max-width: 640px) {
-    body { font-size: 11pt; background: #f5f5f3; }
-    .page { width: 100%; min-height: unset; padding: 16px 14px 32px; }
-    .title-text h1 { font-size: 14pt; }
-    .title-text p { font-size: 9pt; }
-    .phase-wrap { grid-template-columns: 1fr; }
-    .contrib-grid { grid-template-columns: 1fr 1fr; }
-    .why-grid { grid-template-columns: 1fr; }
-    .ref-grid { grid-template-columns: 1fr !important; }
-    .inst-row { flex-direction: column !important; gap: 4px; }
-    .abstract-box p { font-size: 10pt; }
-    .rq-question { font-size: 10pt; }
-    .rq-goal { font-size: 9pt; }
-    .section-label { font-size: 9pt; }
-    .prior-title { flex-direction: column !important; gap: 4px; }
-  }
-
-  @media print {
-    body { margin: 0; }
-    .page { width: 210mm; padding: 14mm 16mm; margin: 0; }
-    @page { size: A4; margin: 0; }
-  }
-
-  /* ── Title ── */
-  .title-block {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    margin-bottom: 18px;
-  }
-  .title-bar {
-    width: 4px;
-    min-height: 52px;
-    background: #534AB7;
-    border-radius: 2px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .title-text h1 {
-    font-size: 17pt;
-    font-weight: 700;
-    color: #1a1a1a;
-    line-height: 1.4;
-    margin-bottom: 4px;
-  }
-  .title-text p {
-    font-size: 9.5pt;
-    color: #666;
-  }
-
-  /* ── Section label ── */
-  .section-label {
-    font-size: 8pt;
-    font-weight: 700;
-    color: #aaa;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    margin-top: 16px;
-  }
-
-  hr.divider {
-    border: none;
-    border-top: 0.5px solid #ddd;
-    margin: 14px 0;
-  }
-
-  /* ── Abstract ── */
-  .abstract-box {
-    background: #f7f7f5;
-    border-radius: 8px;
-    padding: 14px 18px;
-  }
-  .abstract-box p {
-    font-size: 9.5pt;
-    line-height: 1.85;
-    color: #1a1a1a;
-    margin-bottom: 9px;
-  }
-  .abstract-box p:last-child { margin-bottom: 0; }
-  .abstract-box b { font-weight: 700; }
-
-  /* ── Team badges ── */
-  .team-row {
-    display: flex;
-    gap: 7px;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-  }
-  .badge {
-    font-size: 8.5pt;
-    font-weight: 700;
-    padding: 4px 11px;
-    border-radius: 20px;
-  }
-
-  /* ── RQ Cards ── */
-  .rq-list { display: flex; flex-direction: column; gap: 8px; }
-
-  .rq-card {
-    border: 0.5px solid #ddd;
-    border-radius: 8px;
+  /* HEADER */
+  header {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 80px 40px 60px;
+    position: relative;
     overflow: hidden;
   }
-  .rq-header {
-    display: flex;
-    gap: 11px;
-    align-items: flex-start;
-    padding: 10px 12px;
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 60px,
+      rgba(139,105,20,0.04) 60px,
+      rgba(139,105,20,0.04) 61px
+    );
   }
-  .rq-num {
-    width: 34px;
-    height: 34px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11pt;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-  .rq-body { flex: 1; }
-  .rq-question {
-    font-size: 9.5pt;
-    font-weight: 700;
-    color: #1a1a1a;
-    line-height: 1.5;
-    margin-bottom: 4px;
-  }
-  .rq-goal {
-    font-size: 8.5pt;
-    color: #555;
-    line-height: 1.6;
-  }
-  .rq-footer {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    flex-wrap: wrap;
-    padding: 6px 12px;
-    background: #f5f5f3;
-    border-top: 0.5px solid #ddd;
-  }
-  .fl { font-size: 8pt; color: #aaa; }
-  .team-tag {
-    font-size: 8pt;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 10px;
+  header::after {
+    content: '歷史神學';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'EB Garamond', serif;
+    font-size: 180px;
+    color: rgba(255,255,255,0.03);
+    letter-spacing: -10px;
+    pointer-events: none;
   }
 
-  /* ── Schedule ── */
-  .phase-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-tag {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-tag::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold-light);
+    opacity: 0.6;
+  }
+
+  h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(247,244,238,0.65);
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .meta-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    opacity: 0.7;
+  }
+  .meta-value {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: rgba(247,244,238,0.85);
+  }
+
+  /* MAIN */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px 120px;
+  }
+
+  /* SECTIONS */
+  section {
+    margin-bottom: 72px;
+    animation: fadeUp 0.6s ease both;
+  }
+  section:nth-child(2) { animation-delay: 0.1s; }
+  section:nth-child(3) { animation-delay: 0.2s; }
+  section:nth-child(4) { animation-delay: 0.3s; }
+  section:nth-child(5) { animation-delay: 0.4s; }
+  section:nth-child(6) { animation-delay: 0.5s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
     gap: 10px;
   }
-  .phase-box {
-    border: 0.5px solid #ddd;
-    border-radius: 8px;
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+    margin-top: 28px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #3a3a5c;
+    margin-bottom: 16px;
+  }
+
+  /* THESIS BOX */
+  .thesis-box {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 40px 44px;
+    border-left: 3px solid var(--gold);
+    position: relative;
     overflow: hidden;
   }
-  .phase-header {
-    padding: 9px 12px;
+  .thesis-box::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 24px;
+    font-family: 'EB Garamond', serif;
+    font-size: 140px;
+    color: rgba(139,105,20,0.15);
+    line-height: 1;
   }
-  .phase-title { font-size: 10.5pt; font-weight: 700; }
-  .phase-sub { font-size: 8pt; margin-top: 2px; }
-  .phase-body { background: white; padding: 8px 12px; }
-  .year-row {
-    display: flex;
-    gap: 9px;
-    align-items: flex-start;
-    padding: 6px 0;
-    border-bottom: 0.3px solid #eee;
+  .thesis-box p {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    line-height: 2;
+    color: rgba(247,244,238,0.9);
+    position: relative;
+    z-index: 1;
+    margin: 0;
   }
-  .year-row:last-child { border-bottom: none; }
-  .year-badge {
-    font-size: 8.5pt;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 4px;
+
+  /* CLAIM BOX */
+  .claim-box {
+    background: var(--parchment-dark);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin: 24px 0;
+  }
+  .claim-box p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  .claim-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  /* FRAME BOX */
+  .frame-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 28px 32px;
+    margin: 24px 0;
+  }
+  .frame-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .frame-box ul li {
+    padding: 8px 0 8px 20px;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    color: #3a3a5c;
+    position: relative;
+  }
+  .frame-box ul li:last-child { border-bottom: none; }
+  .frame-box ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-family: 'EB Garamond', serif;
+  }
+
+  /* ACTS GRID */
+  .acts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin: 24px 0;
+  }
+  .act-card {
+    background: #fff;
+    padding: 28px;
+    border: 1px solid var(--line);
+    position: relative;
+    transition: box-shadow 0.2s;
+  }
+  .act-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .act-card.highlight {
+    background: var(--ink);
+    color: var(--parchment);
+    border-color: var(--ink);
+  }
+  .act-number {
+    font-family: 'EB Garamond', serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--gold-light);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .act-card.highlight .act-number { color: var(--gold-light); opacity: 0.5; }
+  .act-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .act-card.highlight .act-title { color: #fff; }
+  .act-desc {
+    font-size: 13px;
+    color: #6a6a8a;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .act-card.highlight .act-desc { color: rgba(247,244,238,0.65); }
+  .act-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: #fff;
+    padding: 3px 8px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    margin: 32px 0;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .timeline-item {
+    padding-left: 56px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: 14px;
+    top: 6px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--parchment);
+    border: 2px solid var(--gold);
+    z-index: 1;
+  }
+  .timeline-period {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-family: 'EB Garamond', serif;
+  }
+  .timeline-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .crisis-response {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .cr-box {
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #3a3a5c;
+  }
+  .cr-box.crisis {
+    background: rgba(139,58,42,0.06);
+    border-left: 2px solid var(--rust);
+  }
+  .cr-box.response {
+    background: rgba(74,103,65,0.06);
+    border-left: 2px solid var(--sage);
+  }
+  .cr-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .cr-box.crisis .cr-label { color: var(--rust); }
+  .cr-box.response .cr-label { color: var(--sage); }
+
+  /* SCHEDULE TABLE */
+  .schedule-block {
+    margin-bottom: 32px;
+  }
+  .schedule-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 12px 16px;
+    text-align: left;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    color: #3a3a5c;
+    vertical-align: top;
+    line-height: 1.7;
+  }
+  tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+  td:first-child {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 600;
+    color: var(--ink);
     white-space: nowrap;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .year-content { flex: 1; }
-  .ytitle { font-size: 9pt; font-weight: 700; color: #1a1a1a; margin-bottom: 1px; }
-  .ydesc { font-size: 8pt; color: #666; line-height: 1.5; }
-  .output-tags { margin-top: 3px; display: flex; gap: 4px; flex-wrap: wrap; }
-  .output-tag {
-    font-size: 7.5pt;
-    padding: 1px 6px;
-    border-radius: 3px;
-    background: #efefed;
-    color: #666;
-    border: 0.5px solid #ddd;
   }
 
-  /* ── Contribution ── */
-  .contrib-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 7px;
+  /* FLOW */
+  .flow {
+    margin: 24px 0;
+    padding: 32px;
+    background: var(--ink);
+    font-family: 'Noto Sans KR', monospace;
   }
-  .contrib-card {
-    border: 0.5px solid #ddd;
-    border-radius: 6px;
-    padding: 9px 10px;
+  .flow-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+    color: rgba(247,244,238,0.75);
+    font-size: 13px;
+    line-height: 1.7;
   }
-  .contrib-title {
-    font-size: 9pt;
-    font-weight: 700;
-    margin-bottom: 5px;
+  .flow-item:last-child { margin-bottom: 0; }
+  .flow-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    color: var(--gold-light);
+    min-width: 24px;
+    line-height: 1.4;
   }
-  .contrib-desc {
-    font-size: 8pt;
-    color: #555;
-    line-height: 1.6;
+  .flow-arrow {
+    text-align: center;
+    color: var(--gold);
+    font-size: 18px;
+    padding: 4px 0;
+    opacity: 0.5;
+    margin-left: 8px;
+  }
+  .flow-highlight {
+    color: #fff;
+    font-family: 'Noto Serif KR', serif;
   }
 
-  /* ── Why section ── */
-  .why-grid {
+  /* KEYWORD GRID */
+  .keyword-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin: 24px 0;
   }
-  .why-card {
-    border: 0.5px solid #ddd;
-    border-radius: 6px;
-    padding: 10px 12px;
+  .keyword-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 24px 20px;
+    text-align: center;
   }
-  .why-title { font-size: 9pt; font-weight: 700; color: #1a1a1a; margin-bottom: 5px; }
-  .why-desc { font-size: 8.5pt; color: #555; line-height: 1.6; }
+  .keyword-ko {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .keyword-en {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* CONCEPT TABLE */
+  .concept-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 16px 0;
+  }
+  .concept-table th {
+    background: var(--parchment-dark);
+    color: var(--ink);
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+  }
+  .concept-table td {
+    border: 1px solid var(--line);
+    padding: 10px 14px;
+    background: #fff;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(247,244,238,0.4);
+    text-align: center;
+    padding: 40px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-family: 'EB Garamond', serif;
+  }
+
+  @media (max-width: 640px) {
+    main { padding: 40px 20px 80px; }
+    header { padding: 60px 20px 40px; }
+    .acts-grid { grid-template-columns: 1fr; }
+    .crisis-response { grid-template-columns: 1fr; }
+    .keyword-grid { grid-template-columns: repeat(2, 1fr); }
+    header::after { display: none; }
+  }
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- Institution -->
-  <div class="inst-row" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
-    <div style="display:flex; align-items:center; gap:8px;">
-      <div style="width:3px; height:28px; background:#534AB7; border-radius:2px;"></div>
-      <div>
-        <div style="font-size:11pt; font-weight:700; color:#3C3489; line-height:1.4;">백석대학교 기독교학문연구소</div>
-        <div style="font-size:8.5pt; color:#888;">Christian Humanities Institute</div>
+<header>
+  <div class="header-inner">
+    <div class="header-tag">융합 연구 프로젝트 — 역사신학 파트</div>
+    <h1>생성형 AI 시대 청년의 체현된 관계성 위기와<br>성서적·심리학적 재발견:<br>다시 몸으로, 다시 관계로, 다시 함께</h1>
+    <p class="subtitle">Historical Theology of Body, Soul, Relationality & Happiness<br>— From Scripture to the Age of AI</p>
+    <div class="header-meta">
+      <div class="meta-item">
+        <span class="meta-label">연구 기간</span>
+        <span class="meta-value">6년 (이론 3년 + 적용 3년)</span>
       </div>
-    </div>
-    <div style="font-size:8.5pt; color:#aaa; text-align:right;">
-      연구계획서<br>2026
+      <div class="meta-item">
+        <span class="meta-label">담당 파트</span>
+        <span class="meta-value">2막 — 역사신학</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">변곡점</span>
+        <span class="meta-value">5개 챕터</span>
+      </div>
     </div>
   </div>
+</header>
 
-  <hr style="border:none; border-top:0.5px solid #ddd; margin-bottom:14px;">
+<main>
 
-  <!-- Title -->
-  <div class="title-block">
-    <div class="title-bar"></div>
-    <div class="title-text">
-      <h1>AI 시대 인간 실존의 위기와 영성적 재구성</h1>
-      <p>성서·역사신학·조직신학·심리학·기독교교육학의 통합적 접근 &nbsp;/&nbsp; 6년 학제간 연구</p>
+  <!-- 프로젝트 위치 -->
+  <section>
+    <div class="section-label">Project Position</div>
+    <h2>역사신학 파트의 위치와 기여</h2>
+    <p>본 역사신학 파트는 팀 융합연구의 <strong>2막(역사적 변곡점 분석)</strong>을 담당한다. 팀 연구의 핵심 개념인 <strong>체현된 관계성(embodied relationality)</strong>의 위기가 AI 시대에 갑자기 출현한 것이 아님을 역사적으로 논증하는 것이 핵심 기여다.</p>
+
+    <div class="claim-box">
+      <div class="claim-title">역사신학 파트의 고유한 주장</div>
+      <p>몸·영혼·관계·행복에 대한 위기는 서구 지성사에서 <strong>반복된 패턴</strong>이다. 그리고 매 변곡점마다 <strong>신학적 응답</strong>이 있었다. AI 시대의 위기는 그 패턴의 최신 국면이며, 과거의 신학적 응답들이 오늘의 처방을 위한 자원이 된다.</p>
     </div>
-  </div>
+  </section>
 
-  <!-- Abstract -->
-  <div class="section-label">초록</div>
-  <div class="abstract-box">
-    <p>AI의 급속한 확산은 인간의 자기 이해 방식, 의미 추구 구조, 고통 경험의 패턴을 근본적으로 변형시키고 있다. 알고리즘이 나보다 나를 더 잘 안다고 느끼고, AI에게 위로와 의미를 구하며, 실존적 물음을 기술에 위탁하는 <b>AI 의존(AI dependency)</b> 현상이 급속히 확산되고 있다. 이는 단순한 기술 과의존의 문제가 아니라, 인간이 자기 자신으로부터 소외되는 구조적 실존 위기다.</p>
-    <p>본 연구는 이 위기의 핵심이 <b>영성(spirituality)</b>의 문제임을 논증한다. 본 연구에서 영성은 특정 종교적 신념이 아니라, Pargament(2007)의 심리학적 정의를 따라 <b>"성스러운 것을 향한 탐구(the search for the sacred)"</b>이자, 의미·목적·자기초월을 추구하는 인간의 보편적 성향<sup>*</sup>으로 정의된다. 이 의미에서 영성은 인문학적 실존의 층위이자 심리·사회적 회복탄력성의 근거다. AI가 대체하거나 약화시키는 것이 정확히 이 영역이라는 점에서, AI 의존은 본질적으로 영성의 위기다.</p>
-    <p>이에 본 연구는 인류가 이 물음과 가장 오랫동안 씨름해온 <b>성서적 영성 전통</b>을 성서학·역사신학·조직신학·심리학·기독교교육학의 <b>통합적 학제간 방법론</b>으로 탐구한다. 5개 전공팀은 공유 개념어 사전과 통합 데이터베이스를 기반으로 긴밀히 협력하며, 역사적·텍스트적·심리학적 분석을 교차·통합하여 AI 시대 인간 실존 위기에 응답하는 통합적 영성 모델을 구축한다. 6년의 연구는 학술 이론 모델과 함께, AI 중독·디지털 격차 등 한국 사회의 실제 문제에 즉각 적용 가능한 실천 모델을 산출한다.</p>
-  </div>
+  <!-- 핵심 프레임 -->
+  <section>
+    <div class="section-label">Core Frame</div>
+    <h2>AI ≠ 탈육체화</h2>
+    <p>통상적으로 "AI가 탈육체화를 야기한다"고 논의되지만, 이는 정확하지 않다.</p>
 
-  <!-- APA Footnote -->
-  <div style="margin-top:6px; padding:7px 12px; background:#f7f7f5; border-radius:6px; border-left:2px solid #ccc;">
-    <div style="font-size:7.5pt; color:#888; line-height:1.75;">
-      <sup style="color:#555;">*</sup> <b style="color:#555;">참고문헌:</b> Pargament, K. I. (2007). <i>Spiritually integrated psychotherapy: Understanding and addressing the sacred.</i> New York: Guilford Press. — 볼링그린 주립대학교 심리학과 교수로, APA(미국심리학회, 1892년 설립)가 공인하는 종교·영성 심리학의 대표 학자. 영성을 "성스러운 것을 향한 탐구(the search for the sacred)"로 정의하며, 이를 특정 종교 신념이 아닌 인간의 보편적 심리적 성향으로 규명했다. WHO 역시 건강의 4가지 차원(신체·정신·사회·영적) 중 하나로 영성을 포함한다(WHO, 1998).
-    </div>
-  </div>
-
-  <hr class="divider">
-  <div class="section-label">연구팀 전공 구성</div>
-  <div class="team-row">
-    <span class="badge" style="background:#EEEDFE; color:#3C3489;">성서학 (구약·신약)</span>
-    <span class="badge" style="background:#E1F5EE; color:#085041;">역사신학</span>
-    <span class="badge" style="background:#FAECE7; color:#712B13;">조직신학</span>
-    <span class="badge" style="background:#E6F1FB; color:#0C447C;">심리학·상담학</span>
-    <span class="badge" style="background:#EAF3DE; color:#27500A;">기독교교육학</span>
-  </div>
-
-  <hr class="divider">
-
-  <!-- Keywords -->
-  <div class="section-label">핵심 키워드</div>
-  <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:4px;">
-    <span style="font-size:8.5pt; font-weight:700; padding:5px 12px; border-radius:20px; background:#EEEDFE; color:#3C3489; border:0.5px solid #d0cef0;">AI 의존 <span style="font-weight:400; color:#7a72cc;">AI Dependency</span></span>
-    <span style="font-size:8.5pt; font-weight:700; padding:5px 12px; border-radius:20px; background:#FAECE7; color:#712B13; border:0.5px solid #f0c8b5;">실존적 위기 <span style="font-weight:400; color:#a85030;">Existential Crisis</span></span>
-    <span style="font-size:8.5pt; font-weight:700; padding:5px 12px; border-radius:20px; background:#E6F1FB; color:#0C447C; border:0.5px solid #b8d5f0;">자기 소외 <span style="font-weight:400; color:#3a7ab8;">Self-alienation</span></span>
-    <span style="font-size:8.5pt; font-weight:700; padding:5px 12px; border-radius:20px; background:#E1F5EE; color:#085041; border:0.5px solid #b8e4d0;">영성 <span style="font-weight:400; color:#2a8060;">Spirituality</span></span>
-    <span style="font-size:8.5pt; font-weight:700; padding:5px 12px; border-radius:20px; background:#EEEDFE; color:#3C3489; border:0.5px solid #d0cef0;">자기초월 <span style="font-weight:400; color:#7a72cc;">Self-transcendence</span></span>
-    <span style="font-size:8.5pt; font-weight:700; padding:5px 12px; border-radius:20px; background:#FAEEDA; color:#633806; border:0.5px solid #f0d090;">의미 추구 <span style="font-weight:400; color:#997030;">Quest for Meaning</span></span>
-    <span style="font-size:8.5pt; font-weight:700; padding:5px 12px; border-radius:20px; background:#FAECE7; color:#712B13; border:0.5px solid #f0c8b5;">성서적 영성 전통 <span style="font-weight:400; color:#a85030;">Biblical Spiritual Tradition</span></span>
-    <span style="font-size:8.5pt; font-weight:700; padding:5px 12px; border-radius:20px; background:#EAF3DE; color:#27500A; border:0.5px solid #c0dca0;">학제간 통합 연구 <span style="font-weight:400; color:#508030;">Interdisciplinary Research</span></span>
-  </div>
-  <div class="section-label">핵심 연구 문제 — 목표 및 담당</div>
-  <div class="rq-list">
-
-    <div class="rq-card">
-      <div class="rq-header">
-        <div class="rq-num" style="background:#EEEDFE; color:#3C3489;">RQ1</div>
-        <div class="rq-body">
-          <div class="rq-question">AI 시대 인간은 자기초월·의미·고통 경험에서 무엇을 잃고 있는가</div>
-          <div class="rq-goal">AI와의 상호작용에서 위로·의미·자기이해를 구하는 현상을 질적 연구로 포착한다. 현상학적 분석을 통해 연구 전체의 출발점이 되는 현재 진단 데이터를 확보한다.</div>
-        </div>
-      </div>
-      <div class="rq-footer">
-        <span class="fl">주도</span>
-        <span class="team-tag" style="background:#E6F1FB; color:#0C447C;">심리학·상담학</span>
-        <span class="fl" style="margin-left:4px;">참여</span>
-        <span class="team-tag" style="background:#FAECE7; color:#712B13;">조직신학</span>
-        <span class="team-tag" style="background:#EAF3DE; color:#27500A;">기독교교육학</span>
-      </div>
+    <div class="frame-box">
+      <ul>
+        <li><strong>AI 자체</strong>는 인간의 뇌(신경망)와 몸(센서·구동계)을 <em>모델로</em> 설계된 존재다</li>
+        <li>안드로이드·휴머노이드는 뇌+몸을 모두 모방한 존재로, 외형상 인간과 구별이 불가능해진다</li>
+        <li>따라서 <strong>탈육체화의 실제 기제는 AI가 아니라 디지털 매체</strong>(스크린·알고리즘·가상공간)다</li>
+      </ul>
     </div>
 
-    <div class="rq-card">
-      <div class="rq-header">
-        <div class="rq-num" style="background:#E1F5EE; color:#085041;">RQ2</div>
-        <div class="rq-body">
-          <div class="rq-question">역사 속 유사한 실존적 위기를 인간은 어떻게 통과해왔는가</div>
-          <div class="rq-goal">초대교회~종교개혁 시기 자기초월·의미·고통 경험의 해석 변천을 추적한다. 각 시대의 위기와 응답 패턴을 분석하여 AI 시대와의 연속성·불연속성을 규명한다.</div>
-        </div>
+    <p>AI가 인간을 모방한 것이라면, 정작 그것과 상호작용하는 인간이 인간성을 잃어가는 <strong>역설</strong>이 발생한다. 이 역설의 역사적 뿌리를 추적하는 것이 역사신학 파트의 출발점이다.</p>
+  </section>
+
+  <!-- 핵심 테제 -->
+  <section>
+    <div class="section-label">Core Thesis</div>
+    <h2>핵심 테제</h2>
+    <div class="thesis-box">
+      <p>서구 지성사의 각 패러다임 전환은 성서의 통합적 인간론(몸·영혼·관계·행복)을 반복적으로 왜곡해 왔으며, 매번 신학적 응답이 이를 교정하려 했다. AI 시대는 그 왜곡의 최신 국면이자, 성서적 인간론으로 돌아갈 가장 강력한 계기다.</p>
+    </div>
+  </section>
+
+  <!-- 4대 키워드 -->
+  <section>
+    <div class="section-label">Keywords</div>
+    <h2>4대 중심 키워드 (세로축)</h2>
+    <p>이 네 범주가 각 역사적 변곡점을 통과하며 어떻게 변형·왜곡·회복되었는가를 추적한다.</p>
+    <div class="keyword-grid">
+      <div class="keyword-card">
+        <div class="keyword-ko">몸</div>
+        <div class="keyword-en">Embodiment</div>
       </div>
-      <div class="rq-footer">
-        <span class="fl">주도</span>
-        <span class="team-tag" style="background:#E1F5EE; color:#085041;">역사신학</span>
-        <span class="fl" style="margin-left:4px;">참여</span>
-        <span class="team-tag" style="background:#EEEDFE; color:#3C3489;">성서학</span>
-        <span class="team-tag" style="background:#FAECE7; color:#712B13;">조직신학</span>
+      <div class="keyword-card">
+        <div class="keyword-ko">영혼</div>
+        <div class="keyword-en">Soul / Spirit</div>
+      </div>
+      <div class="keyword-card">
+        <div class="keyword-ko">관계</div>
+        <div class="keyword-en">Relationality</div>
+      </div>
+      <div class="keyword-card">
+        <div class="keyword-ko">행복</div>
+        <div class="keyword-en">Beatitudo</div>
       </div>
     </div>
+    <p style="font-size:13px; color:#6a6a8a;">* 삼위일체는 독립 세로축이 아닌 <em>신학적 토대</em>로 각 챕터에서 필요시 소환한다.</p>
+  </section>
 
-    <div class="rq-card">
-      <div class="rq-header">
-        <div class="rq-num" style="background:#FAECE7; color:#712B13;">RQ3</div>
-        <div class="rq-body">
-          <div class="rq-question">성서 텍스트는 이 경험들에 어떤 언어 자원을 제공하는가</div>
-          <div class="rq-goal">구약·신약 핵심 텍스트를 원어로 분석하여 자기초월·의미·고통 경험의 언어 구조를 추출한다. 현대 심리학 언어가 포착하지 못하는 경험의 결을 드러내고 현재적 해석 자원을 확보한다.</div>
-        </div>
+  <!-- 4막 구조 -->
+  <section>
+    <div class="section-label">Structure</div>
+    <h2>4막 구조 (팀 전체)</h2>
+    <div class="acts-grid">
+      <div class="act-card">
+        <div class="act-number">I</div>
+        <div class="act-title">성서 본문</div>
+        <p class="act-desc">몸·영혼·관계·행복을 어떻게 논했는가</p>
+        <p class="act-desc" style="margin-top:8px; font-size:11px; color:#aaa;">성서학</p>
       </div>
-      <div class="rq-footer">
-        <span class="fl">주도</span>
-        <span class="team-tag" style="background:#EEEDFE; color:#3C3489;">성서학 (구약·신약)</span>
-        <span class="fl" style="margin-left:4px;">참여</span>
-        <span class="team-tag" style="background:#E1F5EE; color:#085041;">역사신학</span>
-        <span class="team-tag" style="background:#FAECE7; color:#712B13;">조직신학</span>
+      <div class="act-card highlight">
+        <div class="act-badge">본 파트</div>
+        <div class="act-number">II</div>
+        <div class="act-title">역사적 변곡점</div>
+        <p class="act-desc">성서 텍스트를 각 시대가 어떻게 해석·적용했는가</p>
+        <p class="act-desc" style="margin-top:8px; font-size:11px; opacity:0.5;">역사신학</p>
+      </div>
+      <div class="act-card">
+        <div class="act-number">III</div>
+        <div class="act-title">현대적 통찰</div>
+        <p class="act-desc">현시대에 텍스트가 주는 통찰 (AI 시대 포함)</p>
+        <p class="act-desc" style="margin-top:8px; font-size:11px; color:#aaa;">조직신학</p>
+      </div>
+      <div class="act-card">
+        <div class="act-number">IV</div>
+        <div class="act-title">실천적 적용</div>
+        <p class="act-desc">체현된 관계성의 심리학적 번역·척도개발·교육적 구현</p>
+        <p class="act-desc" style="margin-top:8px; font-size:11px; color:#aaa;">심리·상담·교육학</p>
       </div>
     </div>
+  </section>
 
-    <div class="rq-card">
-      <div class="rq-header">
-        <div class="rq-num" style="background:#E6F1FB; color:#0C447C;">RQ4</div>
-        <div class="rq-body">
-          <div class="rq-question">신학적 언어와 심리학적 언어는 서로를 어떻게 교정하고 보완하는가</div>
-          <div class="rq-goal">자기초월·의미·고통을 설명하는 두 언어 체계의 수렴과 분기를 분석한다. 어느 언어가 무엇을 포착하고 무엇을 놓치는지를 규명하여 통합 모델 구성의 개념적 토대를 마련한다.</div>
-        </div>
-      </div>
-      <div class="rq-footer">
-        <span class="fl">주도</span>
-        <span class="team-tag" style="background:#FAECE7; color:#712B13;">조직신학</span>
-        <span class="team-tag" style="background:#E6F1FB; color:#0C447C;">심리학·상담학</span>
-        <span class="fl" style="margin-left:4px;">참여</span>
-        <span class="team-tag" style="background:#E1F5EE; color:#085041;">역사신학</span>
-      </div>
-    </div>
+  <!-- 변곡점 -->
+  <section>
+    <div class="section-label">Historical Turning Points</div>
+    <h2>5개 역사적 변곡점 — 위기와 신학적 응답</h2>
+    <p>각 변곡점은 <strong>위기(Crisis)</strong>와 <strong>신학적 응답(Response)</strong>의 쌍으로 구성된다.</p>
 
-    <div class="rq-card">
-      <div class="rq-header">
-        <div class="rq-num" style="background:#EAF3DE; color:#27500A;">RQ5</div>
-        <div class="rq-body">
-          <div class="rq-question">RQ1~4의 분석을 통합하는 인간론적 영성 틀은 무엇인가</div>
-          <div class="rq-goal">텍스트·역사·심리학적 분석의 발견들을 하나의 일관된 인간론으로 통합한다. 어느 단일 분야로도 환원되지 않으면서 AI 시대 인간 실존을 설명하는 통합적 영성 모델을 구성한다.</div>
-        </div>
-      </div>
-      <div class="rq-footer">
-        <span class="fl">주도</span>
-        <span class="team-tag" style="background:#FAECE7; color:#712B13;">조직신학</span>
-        <span class="fl" style="margin-left:4px;">참여</span>
-        <span class="team-tag" style="background:#EEEDFE; color:#3C3489;">성서학</span>
-        <span class="team-tag" style="background:#E1F5EE; color:#085041;">역사신학</span>
-        <span class="team-tag" style="background:#E6F1FB; color:#0C447C;">심리학·상담학</span>
-        <span class="team-tag" style="background:#EAF3DE; color:#27500A;">기독교교육학</span>
-      </div>
-    </div>
+    <div class="timeline">
 
-    <div class="rq-card">
-      <div class="rq-header">
-        <div class="rq-num" style="background:#FAEEDA; color:#633806;">RQ6</div>
-        <div class="rq-body">
-          <div class="rq-question">이 통합적 틀은 학술적·교육적·임상적으로 어떻게 적용될 수 있는가</div>
-          <div class="rq-goal">구축된 영성 모델을 상담·교육·영성 지도 현장에 적용하는 실천 프레임을 개발한다. AI 시대 기독교 교육 커리큘럼 모델과 통합적 상담 지침을 산출하여 현장 기여도를 확보한다.</div>
-        </div>
-      </div>
-      <div class="rq-footer">
-        <span class="fl">주도</span>
-        <span class="team-tag" style="background:#EAF3DE; color:#27500A;">기독교교육학</span>
-        <span class="team-tag" style="background:#E6F1FB; color:#0C447C;">심리학·상담학</span>
-        <span class="fl" style="margin-left:4px;">참여</span>
-        <span class="team-tag" style="background:#FAECE7; color:#712B13;">조직신학</span>
-        <span class="team-tag" style="background:#EEEDFE; color:#3C3489;">성서학</span>
-      </div>
-    </div>
-
-  </div>
-
-  <hr class="divider">
-
-  <!-- Schedule -->
-  <div class="section-label">6년 연구 일정</div>
-  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-    <div style="font-size:8.5pt; color:#555;">각 연차별 상세 연구 내용은 아래 링크에서 확인하세요.</div>
-    <a href="yearly_plan.html" style="font-size:8.5pt; color:#534AB7; text-decoration:none; font-weight:700; background:#EEEDFE; border:0.5px solid #EEEDFE; padding:4px 12px; border-radius:20px; white-space:nowrap;">연차별 상세 계획 보기 →</a>
-  </div>
-  <div class="phase-wrap">
-
-    <div class="phase-box">
-      <div class="phase-header" style="background:#EEEDFE;">
-        <div class="phase-title" style="color:#3C3489;">1단계 (1~3년) — 분석과 진단</div>
-        <div class="phase-sub" style="color:#534AB7;">독립 분석 → 교차 분석 → AI 시대 접점</div>
-      </div>
-      <div class="phase-body">
-        <div class="year-row">
-          <div class="year-badge" style="background:#EEEDFE; color:#3C3489;">1년차</div>
-          <div class="year-content">
-            <div class="ytitle">개념 지도 작성</div>
-            <div class="ydesc">각 팀 독립 분석. 핵심 개념어 추출 및 정밀화</div>
-            <div class="output-tags"><span class="output-tag">논문 4편</span></div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">BC 3세기 — AD 4세기 · Ch.1</div>
+        <div class="timeline-title">헬레니즘·영지주의 + 초대교회 응답</div>
+        <div class="crisis-response">
+          <div class="cr-box crisis">
+            <div class="cr-label">위기</div>
+            플라톤적 존재 위계 유입 → 물질의 실재성·선함 부정. 창조·성육신·부활의 총체적 위기
           </div>
-        </div>
-        <div class="year-row">
-          <div class="year-badge" style="background:#EEEDFE; color:#3C3489;">2년차</div>
-          <div class="year-content">
-            <div class="ytitle">교차 분석</div>
-            <div class="ydesc">팀 간 대화·비교·상호 교정 시작</div>
-            <div class="output-tags"><span class="output-tag">공동논문 2편</span></div>
-          </div>
-        </div>
-        <div class="year-row">
-          <div class="year-badge" style="background:#EEEDFE; color:#3C3489;">3년차</div>
-          <div class="year-content">
-            <div class="ytitle">AI 시대 접점</div>
-            <div class="ydesc">질적 연구 수행. 현재와의 연결 분석</div>
-            <div class="output-tags">
-              <span class="output-tag">공동논문 2편</span>
-              <span class="output-tag">단행본 초안</span>
-            </div>
+          <div class="cr-box response">
+            <div class="cr-label">신학적 응답</div>
+            이레나이우스·터툴리안: 창조의 선함, 몸의 부활, 성육신의 실재성 방어
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="phase-box">
-      <div class="phase-header" style="background:#E1F5EE;">
-        <div class="phase-title" style="color:#085041;">2단계 (4~6년) — 통합과 적용</div>
-        <div class="phase-sub" style="color:#0F6E56;">모델 구성 → 검증 → 최종 산출</div>
-      </div>
-      <div class="phase-body">
-        <div class="year-row">
-          <div class="year-badge" style="background:#E1F5EE; color:#085041;">4년차</div>
-          <div class="year-content">
-            <div class="ytitle">통합 모델 구성</div>
-            <div class="ydesc">인간론적 영성 틀 초안 작성 및 팀 전체 검토</div>
-            <div class="output-tags"><span class="output-tag">공동논문 2편</span></div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">13세기 · Ch.2</div>
+        <div class="timeline-title">중세 아리스토텔레스 수용</div>
+        <div class="crisis-response">
+          <div class="cr-box crisis">
+            <div class="cr-label">위기</div>
+            아베로에스의 단일 지성론(monopsychism) → 개별 영혼의 고유성 붕괴. 창조된 개별 존재로서의 인간 전체가 해체될 위기
           </div>
-        </div>
-        <div class="year-row">
-          <div class="year-badge" style="background:#E1F5EE; color:#085041;">5년차</div>
-          <div class="year-content">
-            <div class="ytitle">모델 검증·정교화</div>
-            <div class="ydesc">학술 검증 + 교육·상담 현장 파일럿 적용</div>
-            <div class="output-tags"><span class="output-tag">공동논문 3편</span></div>
-          </div>
-        </div>
-        <div class="year-row">
-          <div class="year-badge" style="background:#E1F5EE; color:#085041;">6년차</div>
-          <div class="year-content">
-            <div class="ytitle">최종 산출</div>
-            <div class="ydesc">단행본 출판·커리큘럼 모델·실천 매뉴얼</div>
-            <div class="output-tags">
-              <span class="output-tag">단행본 1권</span>
-              <span class="output-tag">커리큘럼</span>
-              <span class="output-tag">실천매뉴얼</span>
-            </div>
+          <div class="cr-box response">
+            <div class="cr-label">신학적 응답</div>
+            아퀴나스: 질료형상론으로 몸-영혼 통합, 개별 영혼의 고유성 회복
           </div>
         </div>
       </div>
-    </div>
 
-  </div>
-
-  <hr class="divider">
-
-  <!-- Contribution -->
-  <div class="section-label">전공별 핵심 기여</div>
-  <div class="contrib-grid">
-    <div class="contrib-card">
-      <div class="contrib-title" style="color:#3C3489;">성서학</div>
-      <div class="contrib-desc">원어 텍스트 분석<br>경험의 언어 자원 발굴<br>RQ3 주도</div>
-    </div>
-    <div class="contrib-card">
-      <div class="contrib-title" style="color:#085041;">역사신학</div>
-      <div class="contrib-desc">개념사·관념사 추적<br>역사적 패턴 분석<br>RQ2 주도</div>
-    </div>
-    <div class="contrib-card">
-      <div class="contrib-title" style="color:#712B13;">조직신학</div>
-      <div class="contrib-desc">개념 정밀화·통합 설계<br>인간론 구성<br>RQ4·5 주도</div>
-    </div>
-    <div class="contrib-card">
-      <div class="contrib-title" style="color:#0C447C;">심리학·상담학</div>
-      <div class="contrib-desc">질적 연구·현상학 분석<br>현재 경험 포착<br>RQ1 주도</div>
-    </div>
-    <div class="contrib-card">
-      <div class="contrib-title" style="color:#27500A;">기독교교육학</div>
-      <div class="contrib-desc">교육 커리큘럼 개발<br>현장 적용 설계<br>RQ6 주도</div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- Why -->
-  <div class="section-label">왜 이 연구인가 — 핵심 논거</div>
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="why-title">AI 의존 = 영성 위기</div>
-      <div class="why-desc">AI가 위로·의미·자기이해·공동체를 제공하려 할 때 침투하는 영역은 영성의 기능과 정확히 겹친다. 이는 기술 문제가 아니라 인문학적 실존의 층위에서 분석해야 할 문제다.</div>
-    </div>
-    <div class="why-card">
-      <div class="why-title">국내 공백 연구</div>
-      <div class="why-desc">성서학·역사신학·조직신학·심리학·기독교교육학을 통합한 학제간 연구가 국내에 전무하다. 하이데거·엘륄·Herzfeld의 선행연구를 한국적 맥락에서 심화하는 독자적 연구.</div>
-    </div>
-    <div class="why-card">
-      <div class="why-title">이 팀만 할 수 있다</div>
-      <div class="why-desc">원어 독해·해석 전통·심리학적 방법론을 동시에 갖춘 비판적 내부자 팀. 텍스트의 깊이와 현재적 접지를 함께 보유하며, 백석대 인프라를 통해 현장 즉시 적용 가능.</div>
-    </div>
-  </div>
-
-  <!-- NRF Strategy Box -->
-  <div style="margin-top:10px; border:0.5px solid #d0cef0; border-radius:8px; overflow:hidden;">
-    <div style="background:#EEEDFE; padding:8px 14px; display:flex; align-items:center; gap:8px;">
-      <div style="font-size:9pt; font-weight:700; color:#3C3489;">연구 핵심 개념 정의 — 학술적 조작화(Operationalization)</div>
-    </div>
-    <div style="padding:10px 14px; background:white; display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
-      <div>
-        <div style="font-size:8pt; font-weight:700; color:#3C3489; margin-bottom:4px;">영성 (Spirituality)</div>
-        <div style="font-size:8pt; color:#444; line-height:1.7;">Pargament(2007)의 정의에 따라 <b>"성스러운 것을 향한 탐구(the search for the sacred)"</b>이자 의미·목적·자기초월을 추구하는 인간의 보편적 성향. 특정 종교 신념이 아닌 학술적·경험적 범주로, WHO도 건강의 4가지 차원 중 하나로 인정(1998).</div>
-      </div>
-      <div>
-        <div style="font-size:8pt; font-weight:700; color:#0C447C; margin-bottom:4px;">AI 의존 (AI Dependency)</div>
-        <div style="font-size:8pt; color:#444; line-height:1.7;">의미·위로·자기이해 등 실존적 기능을 AI에 위탁하는 구조적 패턴. 단순 과사용이 아닌 Heidegger의 Gestell(몰아세움) 개념으로 해석되는 존재론적 자기 소외.</div>
-      </div>
-      <div>
-        <div style="font-size:8pt; font-weight:700; color:#085041; margin-bottom:4px;">통합적 학제간 연구</div>
-        <div style="font-size:8pt; color:#444; line-height:1.7;">각 분과가 독립 후 합치는 Silo 방식이 아닌, 공유 개념어 사전·통합 DB·방법론 교차 적용을 통해 연구 전 과정에서 실질적으로 협력하는 구조.</div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- Prior Research -->
-  <div class="section-label">선행연구 검토</div>
-  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-    <div style="font-size:8.5pt; color:#555;">이론적 토대 및 핵심 선행연구 요약. 상세 내용은 아래 링크에서 확인하세요.</div>
-    <a href="literature_review.html" style="font-size:8.5pt; color:#534AB7; text-decoration:none; font-weight:700; background:#EEEDFE; border:0.5px solid #EEEDFE; padding:4px 12px; border-radius:20px; white-space:nowrap;">선행연구 상세 보기 →</a>
-  </div>
-
-  <!-- 층위 1: 기술 철학 -->
-  <div style="margin-bottom:8px;">
-    <div style="font-size:8pt; font-weight:700; color:#aaa; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;">층위 1 — 기술 철학적 토대</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-      <div style="border:0.5px solid #d0cef0; border-radius:6px; padding:9px 12px; background:#EEEDFE;">
-        <div style="font-size:9pt; font-weight:700; color:#3C3489; margin-bottom:3px;">Heidegger — 기술에 대한 질문 (1954)</div>
-        <div style="font-size:8pt; color:#534AB7; line-height:1.6;">기술(Gestell)은 모든 존재를 자원으로 환원한다. AI는 인간 자신을 데이터 자원으로 환원하는 Gestell의 현재적 표현. "자기 소외"의 존재론적 근거.</div>
-      </div>
-      <div style="border:0.5px solid #d0cef0; border-radius:6px; padding:9px 12px; background:#EEEDFE;">
-        <div style="font-size:9pt; font-weight:700; color:#3C3489; margin-bottom:3px;">Ellul — 기술 체계 (1954)</div>
-        <div style="font-size:8pt; color:#534AB7; line-height:1.6;">기술은 자율적 체계가 되어 인간을 형성한다. 기독교 신학자로서 기술 체계가 영성을 잠식하는 새로운 우상임을 논증. AI 의존의 구조적·영성적 이해 근거.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 층위 2: 신학 선행연구 -->
-  <div style="margin-bottom:8px;">
-    <div style="font-size:8pt; font-weight:700; color:#aaa; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;">층위 2 — 신학적 선행연구 (국외)</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
-      <div style="border:0.5px solid #f0c8b5; border-radius:6px; padding:9px 12px; background:#FAECE7;">
-        <div style="font-size:9pt; font-weight:700; color:#712B13; margin-bottom:3px;">Herzfeld (2002)</div>
-        <div style="font-size:8pt; color:#993C1D; line-height:1.6;"><i>In Our Image</i> — AI와 신학적 인간론을 다룬 최초의 본격적 연구. 관계적 imago Dei 논증. 본 연구의 직접적 선행.</div>
-      </div>
-      <div style="border:0.5px solid #f0c8b5; border-radius:6px; padding:9px 12px; background:#FAECE7;">
-        <div style="font-size:9pt; font-weight:700; color:#712B13; margin-bottom:3px;">Dyer (2011, 2022)</div>
-        <div style="font-size:8pt; color:#993C1D; line-height:1.6;"><i>From the Garden to the City</i> — 성서 서사로 기술을 해석. 기술의 변형적 힘과 성서적 이해의 필요성 논증.</div>
-      </div>
-      <div style="border:0.5px solid #f0c8b5; border-radius:6px; padding:9px 12px; background:#FAECE7;">
-        <div style="font-size:9pt; font-weight:700; color:#712B13; margin-bottom:3px;">Campbell (2013, 2022)</div>
-        <div style="font-size:8pt; color:#993C1D; line-height:1.6;"><i>Digital Religion</i> — 디지털 환경이 종교적 정체성·공동체·권위를 재편하는 방식을 사회학적으로 분석.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 층위 3: 국내+AI 의존 -->
-  <div style="margin-bottom:8px;">
-    <div style="font-size:8pt; font-weight:700; color:#aaa; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px;">층위 3 — 심리학적 선행연구</div>
-    <div style="background:#f7f7f5; border-radius:6px; padding:9px 12px; margin-bottom:6px;">
-      <div style="font-size:9pt; font-weight:700; color:#1a1a1a; margin-bottom:3px;">강찬석 (2023) — 국내 선행연구</div>
-      <div style="font-size:8pt; color:#444; line-height:1.6; margin-bottom:5px;">AI 시대 정체성 위기를 "보편적 영성"으로 접근한 국내 최초 연구. 동양 철학·통합심리학 언어 활용. 단일 저자 문헌 연구로 학제간 통합·역사적·경험적 검증 부재.</div>
-      <a href="https://doi.org/10.22955/ace.26.2.202305.55" target="_blank" style="font-size:7.5pt; color:#534AB7; text-decoration:none; background:#EEEDFE; border:0.5px solid #EEEDFE; padding:2px 7px; border-radius:10px;">→ DOI 원문</a>
-    </div>
-    <div class="ref-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-      <div style="border:0.5px solid #ddd; border-radius:6px; padding:9px 12px;">
-        <div style="font-size:8.5pt; font-weight:700; color:#0C447C; margin-bottom:3px;">심리학·정신건강</div>
-        <div style="font-size:8pt; color:#444; line-height:1.6; margin-bottom:5px;">AI 의존이 핵심 역량·자율성·대인관계를 약화시킴. AI 챗봇 의존으로 인한 심리적 위기·극단적 결과 사례 (Character.AI, 2024).</div>
-        <a href="https://www.sciencedirect.com/science/article/pii/S245195882500260X" target="_blank" style="font-size:7.5pt; color:#534AB7; text-decoration:none; background:#E6F1FB; border:0.5px solid #E6F1FB; padding:2px 7px; border-radius:10px;">→ AI Dependency Scale (2025)</a>
-      </div>
-      <div style="border:0.5px solid #ddd; border-radius:6px; padding:9px 12px;">
-        <div style="font-size:8.5pt; font-weight:700; color:#085041; margin-bottom:3px;">교육·사회</div>
-        <div style="font-size:8pt; color:#444; line-height:1.6; margin-bottom:5px;">대학생 32.7% AI 중독 패턴. AI는 파라메트릭 환원주의·주체성 이전·표현 규제로 인간 경험 구조적 제약.</div>
-        <a href="https://www.journals.uchicago.edu/doi/full/10.1086/730709" target="_blank" style="font-size:7.5pt; color:#534AB7; text-decoration:none; background:#E1F5EE; border:0.5px solid #E1F5EE; padding:2px 7px; border-radius:10px;">→ AI Constrains Experience (2024)</a>
-      </div>
-    </div>
-  </div>
-
-  <div style="background:#EEEDFE; border-radius:6px; padding:10px 14px; margin-top:6px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
-    <div style="font-size:8.5pt; color:#3C3489; line-height:1.7; flex:1;">
-      <b>공통 한계 →</b> 기존 연구들은 AI 의존의 심리적 결과 진단, 신학적 현상 기술, 또는 철학적 분석에 각각 머문다.
-      <b>왜 인간이 AI에게 위로·의미·자기이해를 구하는가</b>라는 실존적·영성적 물음에 답하는 통합 연구는 부재하다.
-    </div>
-    <a href="literature_review.html" style="font-size:8pt; color:#534AB7; text-decoration:none; font-weight:700; background:white; border:0.5px solid #534AB7; padding:5px 12px; border-radius:20px; white-space:nowrap; flex-shrink:0;">상세 검토 →</a>
-  </div>
-
-  <hr class="divider">
-
-  <!-- Social Contribution -->
-  <div class="section-label">사회적 기여 — 한국 사회 실제 문제 해결</div>
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
-    <div style="border:0.5px solid #ddd; border-radius:8px; overflow:hidden;">
-      <div style="background:#FAECE7; padding:8px 12px;">
-        <div style="font-size:9pt; font-weight:700; color:#712B13;">해결하려는 사회 문제</div>
-      </div>
-      <div style="padding:10px 12px; background:white;">
-        <div style="font-size:8.5pt; color:#444; line-height:1.8;">
-          <div style="margin-bottom:4px;">▸ <b>청소년 AI 과의존</b> — 챗봇·AI 동반자 앱 중독 급증</div>
-          <div style="margin-bottom:4px;">▸ <b>디지털 격차</b> — 기술 수용 능력의 세대·계층 불평등</div>
-          <div style="margin-bottom:4px;">▸ <b>AI 시대 실존적 공허</b> — 의미 상실·고독·자기정체성 혼란</div>
-          <div>▸ <b>교육·상담 현장의 AI 대응 부재</b> — 학문적 근거 없이 AI 수용</div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">15~16세기 · Ch.3</div>
+        <div class="timeline-title">르네상스 + 종교개혁</div>
+        <div class="crisis-response">
+          <div class="cr-box crisis">
+            <div class="cr-label">위기</div>
+            인간 주체의 발견과 신학적 균열. 자율적 인간 주체(르네상스) vs 전적 타락·노예의지(종교개혁). 중세적 권위 해체로 개인화의 씨앗
+          </div>
+          <div class="cr-box response">
+            <div class="cr-label">신학적 응답</div>
+            <strong>소명론(vocatio)</strong>: 행복·번영을 일상적 삶 안에서 재정의. <strong>언약론(foedus)</strong>: 관계를 공동체적 언약 구조로 재설정. 그러나 개인화를 역설적으로 가속
+          </div>
         </div>
       </div>
-    </div>
-    <div style="border:0.5px solid #ddd; border-radius:8px; overflow:hidden;">
-      <div style="background:#E1F5EE; padding:8px 12px;">
-        <div style="font-size:9pt; font-weight:700; color:#085041;">백석대 인프라를 통한 즉각 적용</div>
-      </div>
-      <div style="padding:10px 12px; background:white;">
-        <div style="font-size:8.5pt; color:#444; line-height:1.8;">
-          <div style="margin-bottom:4px;">▸ <b>백석대 부설 상담센터</b> — 실천 모델 파일럿 적용</div>
-          <div style="margin-bottom:4px;">▸ <b>백석대·백석예술대 교육 현장</b> — 커리큘럼 즉시 반영</div>
-          <div style="margin-bottom:4px;">▸ <b>기독교학문연구소 네트워크</b> — 교회·사회복지기관 연계</div>
-          <div>▸ <b>지역사회 연계</b> — AI 의존 취약층 대상 프로그램 운영</div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">17~19세기 · Ch.4</div>
+        <div class="timeline-title">과학혁명·데카르트 + 계몽주의·낭만주의</div>
+        <div class="crisis-response">
+          <div class="cr-box crisis">
+            <div class="cr-label">위기</div>
+            몸=기계(res extensa). 사유하는 개인 주체가 진리의 출발점. 관계·공동체·행복이 사적·내면적 영역으로 축소
+          </div>
+          <div class="cr-box response">
+            <div class="cr-label">신학적 응답</div>
+            낭만주의·경건주의: 감성·공동체·영성 복권 시도. 그러나 데카르트 문법 안에서의 반동이라는 한계
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Stage outputs -->
-  <div style="background:#f7f7f5; border-radius:8px; padding:10px 14px;">
-    <div style="font-size:8.5pt; font-weight:700; color:#1a1a1a; margin-bottom:8px;">연차별 사회적 산출물</div>
-    <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:6px;">
-      <div style="text-align:center; padding:6px 4px; background:white; border-radius:6px; border:0.5px solid #ddd;">
-        <div style="font-size:8pt; font-weight:700; color:#534AB7; margin-bottom:3px;">3년차</div>
-        <div style="font-size:7.5pt; color:#555; line-height:1.5;">AI 의존<br>자가진단<br>도구 개발</div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">19세기 말 — 20세기 후반 · Ch.5</div>
+        <div class="timeline-title">이성의 파산과 주체의 해체</div>
+        <p style="font-size:12px; color:#aaa; margin-bottom:12px;">니체 · 세계대전 · 실존주의 · 포스트모더니즘</p>
+        <div class="crisis-response">
+          <div class="cr-box crisis">
+            <div class="cr-label">위기</div>
+            <strong>이성의 파산</strong>: 니체의 신 죽음 선언 + 세계대전으로 이성·진보 신화 붕괴. <strong>주체의 해체</strong>: 푸코·데리다·레비나스에 의해 보편 주체가 권력의 산물임이 폭로. 토대 전체 상실
+          </div>
+          <div class="cr-box response">
+            <div class="cr-label">신학적 응답</div>
+            레비나스의 타자 윤리, 공동체주의(매킨타이어), 실존주의 신학(틸리히·본회퍼): 관계·공동체·몸의 재발견 시도
+          </div>
+        </div>
       </div>
-      <div style="text-align:center; padding:6px 4px; background:white; border-radius:6px; border:0.5px solid #ddd;">
-        <div style="font-size:8pt; font-weight:700; color:#534AB7; margin-bottom:3px;">4년차</div>
-        <div style="font-size:7.5pt; color:#555; line-height:1.5;">영성 교육<br>가이드<br>출판</div>
+
+    </div>
+  </section>
+
+  <!-- 인과적 흐름 -->
+  <section>
+    <div class="section-label">Causal Flow</div>
+    <h2>변곡점 간 인과적 흐름</h2>
+    <div class="flow">
+      <div class="flow-item">
+        <span class="flow-num">1</span>
+        <span><span class="flow-highlight">물질·몸의 실재성 위기</span> → 성육신·창조론으로 응답</span>
       </div>
-      <div style="text-align:center; padding:6px 4px; background:white; border-radius:6px; border:0.5px solid #ddd;">
-        <div style="font-size:8pt; font-weight:700; color:#085041; margin-bottom:3px;">5년차</div>
-        <div style="font-size:7.5pt; color:#555; line-height:1.5;">상담사<br>교육 프로그램<br>파일럿</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-item">
+        <span class="flow-num">2</span>
+        <span><span class="flow-highlight">개별 영혼의 고유성 위기</span> → 질료형상론으로 응답</span>
       </div>
-      <div style="text-align:center; padding:6px 4px; background:white; border-radius:6px; border:0.5px solid #ddd;">
-        <div style="font-size:8pt; font-weight:700; color:#085041; margin-bottom:3px;">5년차</div>
-        <div style="font-size:7.5pt; color:#555; line-height:1.5;">교회학교<br>커리큘럼<br>파일럿</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-item">
+        <span class="flow-num">3</span>
+        <span><span class="flow-highlight">인간 주체의 발견과 균열</span> → 소명론·언약론으로 응답 (개인화 가속의 역설)</span>
       </div>
-      <div style="text-align:center; padding:6px 4px; background:white; border-radius:6px; border:0.5px solid #ddd;">
-        <div style="font-size:8pt; font-weight:700; color:#085041; margin-bottom:3px;">6년차</div>
-        <div style="font-size:7.5pt; color:#555; line-height:1.5;">정책 제언<br>보고서<br>(교육부 등)</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-item">
+        <span class="flow-num">4</span>
+        <span><span class="flow-highlight">개인 주체의 절대화</span> → 낭만주의·경건주의로 응답 (한계 있음)</span>
       </div>
-      <div style="text-align:center; padding:6px 4px; background:white; border-radius:6px; border:0.5px solid #ddd;">
-        <div style="font-size:8pt; font-weight:700; color:#085041; margin-bottom:3px;">6년차</div>
-        <div style="font-size:7.5pt; color:#555; line-height:1.5;">실천<br>매뉴얼<br>무료 배포</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-item">
+        <span class="flow-num">5</span>
+        <span><span class="flow-highlight">이성의 파산 + 주체 자체의 붕괴</span> → 타자 윤리·공동체주의로 응답</span>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-item">
+        <span class="flow-num" style="color:var(--gold-light);">→</span>
+        <span><span class="flow-highlight">AI 시대</span>: 몸+뇌를 모방한 존재의 등장, 디지털 매체가 탈육체화 야기 → 체현된 관계성의 본질 재질문 <em style="color:rgba(247,244,238,0.4)">(3막)</em></span>
       </div>
     </div>
-  </div>
+  </section>
 
-</div>
+  <!-- 일정 -->
+  <section>
+    <div class="section-label">Schedule</div>
+    <h2>프로젝트 일정 (6년)</h2>
+
+    <div class="schedule-block">
+      <div class="schedule-label">이론 파트 — 1~3년차</div>
+      <table>
+        <thead>
+          <tr>
+            <th>연차</th>
+            <th>성서학 (1막)</th>
+            <th>역사신학 (2막)</th>
+            <th>조직신학 (3막)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1년차</td>
+            <td>구약: 네페쉬·루아흐·바사르·레브·샬롬</td>
+            <td>Ch.1 헬레니즘·영지주의 + 초대교회</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>2년차</td>
+            <td>신약: 소마·사르크스·프뉴마·코이노니아·마카리오스</td>
+            <td>Ch.2 중세 / Ch.3 르네상스·종교개혁</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>3년차</td>
+            <td>성서학·역사신학 통합 종합</td>
+            <td>Ch.4 과학혁명~낭만주의 / Ch.5 이성의 파산</td>
+            <td>AI 시대 통찰 + 조직신학적 재구성</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px; color:#aaa; margin-top:10px;">* 성서학과 역사신학은 1~2년차 병행 연구. 성서학이 원전 개념을 확립하면 역사신학이 그 변천을 추적하는 상호 피드백 구조.</p>
+    </div>
+
+    <div class="schedule-block">
+      <div class="schedule-label">적용 파트 — 4~6년차</div>
+      <table>
+        <thead>
+          <tr><th>연차</th><th>내용</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>4년차</td><td>심리·상담학 적용 — 현황조사·질적연구·척도 개발</td></tr>
+          <tr><td>5년차</td><td>교육학 적용 및 커리큘럼 개발, AI 설계 원리 도출</td></tr>
+          <tr><td>6년차</td><td>통합 단행본 출판 + 실천 매뉴얼</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 팀 연구 연결 -->
+  <section>
+    <div class="section-label">Team Connections</div>
+    <h2>팀 연구 핵심 개념과의 연결</h2>
+    <table class="concept-table">
+      <thead>
+        <tr><th>팀 연구 개념</th><th>역사신학 파트 연결</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>체현된 관계성</strong><br><em style="font-size:11px;color:#aaa;">embodied relationality</em></td>
+          <td>각 변곡점에서 몸·관계 세로축의 변천으로 추적</td>
+        </tr>
+        <tr>
+          <td><strong>무마찰적 친밀성</strong><br><em style="font-size:11px;color:#aaa;">frictionless intimacy</em></td>
+          <td>Ch.3~4의 개인화·내면화 과정의 역사적 뿌리</td>
+        </tr>
+        <tr>
+          <td><strong>AI ≠ 탈육체화</strong></td>
+          <td>AI는 인간을 모방한 것, 탈육체화의 기제는 디지털 매체</td>
+        </tr>
+        <tr>
+          <td><strong>성서적 관계존재론</strong></td>
+          <td>1막 성서학 파트와 연동, 역사적 수용사로 확장</td>
+        </tr>
+        <tr>
+          <td><strong>다시 몸으로·다시 관계로·다시 함께</strong></td>
+          <td>각 챕터의 신학적 응답이 반복적으로 지향한 방향</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  역사신학 융합 프로젝트 · Historical Theology Research · 2026
+</footer>
+
 </body>
 </html>
