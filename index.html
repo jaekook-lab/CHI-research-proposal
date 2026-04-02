@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>역사신학 융합 프로젝트</title>
+<title>역사신학 분과 연구개요 — 백석대학교 기독교학문연구소</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -29,18 +29,18 @@
     line-height: 1.8;
   }
 
-  /* HEADER */
+  /* ── HEADER ── */
   header {
     background: var(--ink);
     color: var(--parchment);
-    padding: 80px 40px 60px;
+    padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 60px) clamp(40px, 6vw, 60px);
     position: relative;
     overflow: hidden;
   }
   header::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    inset: 0;
     background: repeating-linear-gradient(
       90deg,
       transparent,
@@ -52,64 +52,90 @@
   header::after {
     content: '歷史神學';
     position: absolute;
-    right: -20px;
+    right: -10px;
     top: 50%;
     transform: translateY(-50%);
     font-family: 'EB Garamond', serif;
-    font-size: 180px;
+    font-size: clamp(80px, 14vw, 180px);
     color: rgba(255,255,255,0.03);
-    letter-spacing: -10px;
+    letter-spacing: -6px;
     pointer-events: none;
+    white-space: nowrap;
   }
 
   .header-inner {
-    max-width: 900px;
+    max-width: 860px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
   }
 
-  .header-tag {
+  /* 기관 태그 */
+  .inst-tag {
     font-family: 'EB Garamond', serif;
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: var(--gold-light);
+    font-size: clamp(11px, 1.8vw, 13px);
+    letter-spacing: 3px;
+    color: rgba(196,152,42,0.75);
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+  }
+  .inst-tag::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--gold-light);
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  /* 상위 태그 */
+  .header-tag {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(11px, 1.8vw, 13px);
+    letter-spacing: 3px;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   .header-tag::before {
     content: '';
-    width: 40px;
+    width: 32px;
     height: 1px;
     background: var(--gold-light);
     opacity: 0.6;
+    flex-shrink: 0;
   }
 
   h1 {
     font-family: 'Noto Serif KR', serif;
-    font-size: clamp(22px, 3vw, 30px);
+    font-size: clamp(17px, 3vw, 26px);
     font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    line-height: 1.55;
+    margin-bottom: 18px;
     color: #fff;
   }
 
   .subtitle {
     font-family: 'EB Garamond', serif;
-    font-size: 18px;
+    font-size: clamp(14px, 2.2vw, 17px);
     font-style: italic;
-    color: rgba(247,244,238,0.65);
+    color: rgba(247,244,238,0.55);
     line-height: 1.6;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
 
   .header-meta {
     display: flex;
-    gap: 32px;
+    gap: clamp(16px, 4vw, 36px);
     flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 1px solid rgba(139,105,20,0.25);
   }
   .meta-item {
     display: flex;
@@ -125,31 +151,29 @@
   }
   .meta-value {
     font-family: 'Noto Serif KR', serif;
-    font-size: 14px;
+    font-size: clamp(12px, 1.8vw, 14px);
     color: rgba(247,244,238,0.85);
   }
 
-  /* MAIN */
+  /* ── MAIN ── */
   main {
-    max-width: 900px;
+    max-width: 860px;
     margin: 0 auto;
-    padding: 60px 40px 120px;
+    padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 40px) clamp(60px, 10vw, 120px);
   }
 
-  /* SECTIONS */
+  /* ── SECTIONS ── */
   section {
-    margin-bottom: 72px;
+    margin-bottom: clamp(48px, 7vw, 80px);
     animation: fadeUp 0.6s ease both;
   }
-  section:nth-child(2) { animation-delay: 0.1s; }
-  section:nth-child(3) { animation-delay: 0.2s; }
-  section:nth-child(4) { animation-delay: 0.3s; }
-  section:nth-child(5) { animation-delay: 0.4s; }
-  section:nth-child(6) { animation-delay: 0.5s; }
+  section:nth-child(1) { animation-delay: 0.05s; }
+  section:nth-child(2) { animation-delay: 0.15s; }
+  section:nth-child(3) { animation-delay: 0.25s; }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .section-label {
@@ -157,7 +181,7 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -171,51 +195,53 @@
 
   h2 {
     font-family: 'Noto Serif KR', serif;
-    font-size: 22px;
+    font-size: clamp(17px, 2.8vw, 22px);
     font-weight: 600;
     color: var(--ink);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     line-height: 1.4;
   }
 
   h3 {
     font-family: 'Noto Serif KR', serif;
-    font-size: 16px;
+    font-size: clamp(13px, 2vw, 15px);
     font-weight: 600;
     color: var(--ink-soft);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     margin-top: 28px;
   }
 
   p {
-    font-size: 15px;
-    line-height: 1.9;
+    font-size: clamp(13px, 1.8vw, 15px);
+    line-height: 1.95;
     color: #3a3a5c;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
-  /* THESIS BOX */
+  /* ── THESIS BOX ── */
   .thesis-box {
     background: var(--ink);
     color: var(--parchment);
-    padding: 40px 44px;
+    padding: clamp(24px, 4vw, 40px) clamp(20px, 4vw, 44px);
     border-left: 3px solid var(--gold);
     position: relative;
     overflow: hidden;
+    margin-bottom: 28px;
   }
   .thesis-box::before {
     content: '"';
     position: absolute;
     top: -20px;
-    left: 24px;
+    left: 20px;
     font-family: 'EB Garamond', serif;
-    font-size: 140px;
-    color: rgba(139,105,20,0.15);
+    font-size: 120px;
+    color: rgba(139,105,20,0.12);
     line-height: 1;
+    pointer-events: none;
   }
   .thesis-box p {
     font-family: 'Noto Serif KR', serif;
-    font-size: 16px;
+    font-size: clamp(13px, 1.8vw, 15px);
     line-height: 2;
     color: rgba(247,244,238,0.9);
     position: relative;
@@ -223,682 +249,417 @@
     margin: 0;
   }
 
-  /* CLAIM BOX */
-  .claim-box {
-    background: var(--parchment-dark);
+  /* ── METHOD GRID ── */
+  .method-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 20px 0 28px;
+  }
+  @media (max-width: 540px) {
+    .method-grid { grid-template-columns: 1fr; }
+  }
+  .method-card {
+    background: #fff;
     border: 1px solid var(--line);
-    border-left: 3px solid var(--accent);
-    padding: 28px 32px;
-    margin: 24px 0;
+    padding: clamp(18px, 3vw, 28px) clamp(16px, 3vw, 28px);
   }
-  .claim-box p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.9;
-  }
-  .claim-title {
-    font-family: 'Noto Serif KR', serif;
-    font-size: 12px;
-    font-weight: 600;
+  .method-badge {
+    font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 12px;
+    font-weight: 500;
+    margin-bottom: 10px;
   }
-
-  /* FRAME BOX */
-  .frame-box {
-    background: #fff;
-    border: 1px solid var(--line);
-    padding: 28px 32px;
-    margin: 24px 0;
-  }
-  .frame-box ul {
-    list-style: none;
-    padding: 0;
-  }
-  .frame-box ul li {
-    padding: 8px 0 8px 20px;
-    border-bottom: 1px solid var(--line);
-    font-size: 14px;
-    color: #3a3a5c;
-    position: relative;
-  }
-  .frame-box ul li:last-child { border-bottom: none; }
-  .frame-box ul li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-    font-family: 'EB Garamond', serif;
-  }
-
-  /* ACTS GRID */
-  .acts-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    margin: 24px 0;
-  }
-  .act-card {
-    background: #fff;
-    padding: 28px;
-    border: 1px solid var(--line);
-    position: relative;
-    transition: box-shadow 0.2s;
-  }
-  .act-card:hover {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  }
-  .act-card.highlight {
-    background: var(--ink);
-    color: var(--parchment);
-    border-color: var(--ink);
-  }
-  .act-number {
-    font-family: 'EB Garamond', serif;
-    font-size: 48px;
-    font-weight: 400;
-    color: var(--gold-light);
-    opacity: 0.3;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .act-card.highlight .act-number { color: var(--gold-light); opacity: 0.5; }
-  .act-title {
-    font-family: 'Noto Serif KR', serif;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--ink);
-  }
-  .act-card.highlight .act-title { color: #fff; }
-  .act-desc {
-    font-size: 13px;
-    color: #6a6a8a;
-    line-height: 1.7;
+  .method-badge.sync { color: var(--accent); }
+  .method-badge.dia  { color: var(--sage); }
+  .method-card p {
+    font-size: clamp(12px, 1.6vw, 13px);
+    line-height: 1.8;
     margin: 0;
-  }
-  .act-card.highlight .act-desc { color: rgba(247,244,238,0.65); }
-  .act-badge {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    background: var(--gold);
-    color: #fff;
-    padding: 3px 8px;
+    color: #4a4a6a;
   }
 
-  /* TIMELINE */
+  /* ── TIMELINE ── */
   .timeline {
-    margin: 32px 0;
+    margin: 24px 0 0;
     position: relative;
   }
   .timeline::before {
     content: '';
     position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
+    left: 18px;
+    top: 8px;
+    bottom: 8px;
     width: 1px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
+    background: linear-gradient(to bottom, var(--gold), rgba(139,105,20,0.1));
   }
-  .timeline-item {
-    padding-left: 56px;
-    margin-bottom: 40px;
+  .tl-item {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 0 clamp(12px, 2vw, 20px);
+    margin-bottom: 28px;
     position: relative;
   }
-  .timeline-dot {
-    position: absolute;
-    left: 14px;
-    top: 6px;
+  .tl-item:last-child { margin-bottom: 0; }
+
+  .tl-dot {
     width: 13px;
     height: 13px;
     border-radius: 50%;
     background: var(--parchment);
     border: 2px solid var(--gold);
+    margin-top: 5px;
+    margin-left: 12px;
+    flex-shrink: 0;
+    position: relative;
     z-index: 1;
   }
-  .timeline-period {
-    font-size: 11px;
+
+  .tl-content {}
+  .tl-period {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(10px, 1.5vw, 11px);
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 6px;
-    font-family: 'EB Garamond', serif;
+    margin-bottom: 4px;
   }
-  .timeline-title {
+  .tl-title {
     font-family: 'Noto Serif KR', serif;
-    font-size: 16px;
+    font-size: clamp(13px, 2vw, 15px);
     font-weight: 600;
     color: var(--ink);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
-  .crisis-response {
+  .tl-person {
+    display: inline-block;
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(12px, 1.8vw, 13px);
+    font-style: italic;
+    color: #fff;
+    background: var(--ink-soft);
+    padding: 2px 10px;
+    margin-bottom: 8px;
+  }
+  .tl-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 12px;
+    gap: 8px;
+    margin-top: 6px;
   }
-  .cr-box {
-    padding: 14px 16px;
-    font-size: 13px;
+  @media (max-width: 480px) {
+    .tl-row { grid-template-columns: 1fr; }
+  }
+  .tl-box {
+    padding: 10px 14px;
+    font-size: clamp(11px, 1.5vw, 12px);
     line-height: 1.7;
     color: #3a3a5c;
   }
-  .cr-box.crisis {
+  .tl-box.crisis {
     background: rgba(139,58,42,0.06);
     border-left: 2px solid var(--rust);
   }
-  .cr-box.response {
+  .tl-box.response {
     background: rgba(74,103,65,0.06);
     border-left: 2px solid var(--sage);
   }
-  .cr-label {
+  .tl-box-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .tl-box.crisis  .tl-box-label { color: var(--rust); }
+  .tl-box.response .tl-box-label { color: var(--sage); }
+
+  /* ── NOTE BOX ── */
+  .note-box {
+    background: var(--parchment-dark);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: clamp(16px, 3vw, 24px) clamp(16px, 3vw, 28px);
+    margin-top: 24px;
+  }
+  .note-box p {
+    font-size: clamp(12px, 1.6vw, 13px);
+    line-height: 1.85;
+    color: #4a4a6a;
+    margin: 0;
+  }
+  .note-title {
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 6px;
-    font-weight: 500;
-  }
-  .cr-box.crisis .cr-label { color: var(--rust); }
-  .cr-box.response .cr-label { color: var(--sage); }
-
-  /* SCHEDULE TABLE */
-  .schedule-block {
-    margin-bottom: 32px;
-  }
-  .schedule-label {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 12px;
     font-weight: 500;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-  th {
-    background: var(--ink);
-    color: var(--parchment);
-    padding: 12px 16px;
-    text-align: left;
-    font-family: 'Noto Serif KR', serif;
-    font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
-  td {
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--line);
-    color: #3a3a5c;
-    vertical-align: top;
-    line-height: 1.7;
-  }
-  tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
-  td:first-child {
-    font-family: 'Noto Serif KR', serif;
-    font-weight: 600;
-    color: var(--ink);
-    white-space: nowrap;
+    margin-bottom: 10px;
   }
 
-  /* FLOW */
-  .flow {
-    margin: 24px 0;
-    padding: 32px;
-    background: var(--ink);
-    font-family: 'Noto Sans KR', monospace;
-  }
-  .flow-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 20px;
-    color: rgba(247,244,238,0.75);
-    font-size: 13px;
-    line-height: 1.7;
-  }
-  .flow-item:last-child { margin-bottom: 0; }
-  .flow-num {
-    font-family: 'EB Garamond', serif;
-    font-size: 18px;
-    color: var(--gold-light);
-    min-width: 24px;
-    line-height: 1.4;
-  }
-  .flow-arrow {
-    text-align: center;
-    color: var(--gold);
-    font-size: 18px;
-    padding: 4px 0;
-    opacity: 0.5;
-    margin-left: 8px;
-  }
-  .flow-highlight {
-    color: #fff;
-    font-family: 'Noto Serif KR', serif;
-  }
-
-  /* KEYWORD GRID */
-  .keyword-grid {
+  /* ── EFFECT GRID ── */
+  .effect-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2px;
-    margin: 24px 0;
+    margin: 20px 0 0;
   }
-  .keyword-card {
+  @media (max-width: 600px) {
+    .effect-grid { grid-template-columns: 1fr; }
+  }
+  .effect-card {
     background: #fff;
     border: 1px solid var(--line);
-    padding: 24px 20px;
-    text-align: center;
+    padding: clamp(18px, 3vw, 28px) clamp(16px, 2.5vw, 24px);
   }
-  .keyword-ko {
+  .effect-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 36px;
+    color: var(--gold-light);
+    opacity: 0.35;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .effect-title {
     font-family: 'Noto Serif KR', serif;
-    font-size: 20px;
+    font-size: clamp(12px, 1.8vw, 13px);
     font-weight: 600;
     color: var(--ink);
-    margin-bottom: 4px;
+    margin-bottom: 8px;
   }
-  .keyword-en {
-    font-family: 'EB Garamond', serif;
-    font-size: 13px;
-    font-style: italic;
-    color: var(--gold);
-  }
-
-  /* CONCEPT TABLE */
-  .concept-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    margin: 16px 0;
-  }
-  .concept-table th {
-    background: var(--parchment-dark);
-    color: var(--ink);
-    font-family: 'Noto Serif KR', serif;
-    font-size: 12px;
-    padding: 10px 14px;
-    border: 1px solid var(--line);
-  }
-  .concept-table td {
-    border: 1px solid var(--line);
-    padding: 10px 14px;
-    background: #fff;
+  .effect-desc {
+    font-size: clamp(11px, 1.5vw, 12px);
+    line-height: 1.75;
+    color: #5a5a7a;
+    margin: 0;
   }
 
-  /* FOOTER */
+  /* ── FOOTER ── */
   footer {
     background: var(--ink);
-    color: rgba(247,244,238,0.4);
+    color: rgba(247,244,238,0.35);
     text-align: center;
-    padding: 40px;
-    font-size: 12px;
-    letter-spacing: 1px;
+    padding: clamp(28px, 5vw, 40px) 20px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
     font-family: 'EB Garamond', serif;
+    line-height: 1.8;
   }
-
-  @media (max-width: 640px) {
-    main { padding: 40px 20px 80px; }
-    header { padding: 60px 20px 40px; }
-    .acts-grid { grid-template-columns: 1fr; }
-    .crisis-response { grid-template-columns: 1fr; }
-    .keyword-grid { grid-template-columns: repeat(2, 1fr); }
-    header::after { display: none; }
+  footer span {
+    display: block;
+    color: rgba(196,152,42,0.5);
+    margin-bottom: 4px;
+    font-size: 12px;
   }
 </style>
 </head>
 <body>
 
+<!-- ── HEADER ── -->
 <header>
   <div class="header-inner">
-    <div class="header-tag">융합 연구 프로젝트 — 역사신학 파트</div>
-    <h1>생성형 AI 시대 청년의 체현된 관계성 위기와<br>성서적·심리학적 재발견:<br>다시 몸으로, 다시 관계로, 다시 함께</h1>
-    <p class="subtitle">Historical Theology of Body, Soul, Relationality & Happiness<br>— From Scripture to the Age of AI</p>
+    <div class="inst-tag">Baekseok University · Institute for Christian Scholarship</div>
+    <div class="header-tag">융합연구 프로젝트 — 역사신학 하위섹션</div>
+    <h1>체화된 관계성의 역사적 재편:<br>몸·관계·공동체의 통합적 추적</h1>
+    <p class="subtitle">
+      A Historical-Theological Study of Embodied Relationality<br>
+      — From Patristics to Postmodernity
+    </p>
     <div class="header-meta">
       <div class="meta-item">
         <span class="meta-label">연구 기간</span>
-        <span class="meta-value">6년 (이론 3년 + 적용 3년)</span>
+        <span class="meta-value">1~2년차</span>
       </div>
       <div class="meta-item">
-        <span class="meta-label">담당 파트</span>
-        <span class="meta-value">2막 — 역사신학</span>
+        <span class="meta-label">소속 단계</span>
+        <span class="meta-value">1단계 · 인문학 중심</span>
       </div>
       <div class="meta-item">
-        <span class="meta-label">변곡점</span>
-        <span class="meta-value">5개 챕터</span>
+        <span class="meta-label">분석 대상</span>
+        <span class="meta-value">5개 역사적 변곡점</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">핵심 인물</span>
+        <span class="meta-value">아우구스티누스 · 아퀴나스 · 루터/칼뱅 · 에드워즈 · 본회퍼</span>
       </div>
     </div>
   </div>
 </header>
 
+<!-- ── MAIN ── -->
 <main>
 
-  <!-- 프로젝트 위치 -->
+  <!-- 연구목표 -->
   <section>
-    <div class="section-label">Project Position</div>
-    <h2>역사신학 파트의 위치와 기여</h2>
-    <p>본 역사신학 파트는 팀 융합연구의 <strong>2막(역사적 변곡점 분석)</strong>을 담당한다. 팀 연구의 핵심 개념인 <strong>체현된 관계성(embodied relationality)</strong>의 위기가 AI 시대에 갑자기 출현한 것이 아님을 역사적으로 논증하는 것이 핵심 기여다.</p>
+    <div class="section-label">연구목표</div>
+    <h2>체화된 관계성의 역사적 위기를 통합적으로 추적한다</h2>
 
-    <div class="claim-box">
-      <div class="claim-title">역사신학 파트의 고유한 주장</div>
-      <p>몸·영혼·관계·행복에 대한 위기는 서구 지성사에서 <strong>반복된 패턴</strong>이다. 그리고 매 변곡점마다 <strong>신학적 응답</strong>이 있었다. AI 시대의 위기는 그 패턴의 최신 국면이며, 과거의 신학적 응답들이 오늘의 처방을 위한 자원이 된다.</p>
-    </div>
-  </section>
-
-  <!-- 핵심 프레임 -->
-  <section>
-    <div class="section-label">Core Frame</div>
-    <h2>AI ≠ 탈육체화</h2>
-    <p>통상적으로 "AI가 탈육체화를 야기한다"고 논의되지만, 이는 정확하지 않다.</p>
-
-    <div class="frame-box">
-      <ul>
-        <li><strong>AI 자체</strong>는 인간의 뇌(신경망)와 몸(센서·구동계)을 <em>모델로</em> 설계된 존재다</li>
-        <li>안드로이드·휴머노이드는 뇌+몸을 모두 모방한 존재로, 외형상 인간과 구별이 불가능해진다</li>
-        <li>따라서 <strong>탈육체화의 실제 기제는 AI가 아니라 디지털 매체</strong>(스크린·알고리즘·가상공간)다</li>
-      </ul>
-    </div>
-
-    <p>AI가 인간을 모방한 것이라면, 정작 그것과 상호작용하는 인간이 인간성을 잃어가는 <strong>역설</strong>이 발생한다. 이 역설의 역사적 뿌리를 추적하는 것이 역사신학 파트의 출발점이다.</p>
-  </section>
-
-  <!-- 핵심 테제 -->
-  <section>
-    <div class="section-label">Core Thesis</div>
-    <h2>핵심 테제</h2>
     <div class="thesis-box">
-      <p>서구 지성사의 각 패러다임 전환은 성서의 통합적 인간론(몸·영혼·관계·행복)을 반복적으로 왜곡해 왔으며, 매번 신학적 응답이 이를 교정하려 했다. AI 시대는 그 왜곡의 최신 국면이자, 성서적 인간론으로 돌아갈 가장 강력한 계기다.</p>
+      <p>체화된 관계성(embodied relationality)의 위기는 AI 시대에 갑자기 출현한 것이 아니라, 서구 기독교 지성사가 반복적으로 직면해온 긴장의 최신 국면이다.</p>
     </div>
+
+    <p>기존 역사신학 연구는 교리사 중심의 통시적 접근이 주를 이루며, 몸·관계·공동체 등의 주제는 개별적으로 다루어지는 편이다. 본 연구는 성서가 제시하는 몸·관계·공동체의 통합적 이해가 서구 지성사의 주요 변곡점을 통과하며 어떻게 변형·왜곡·회복되어 왔는지를, 이 세 주제를 <strong>하나의 연동된 체계</strong>로 보고 공시적·통시적으로 통합 분석하는 것을 목표로 한다.</p>
   </section>
 
-  <!-- 4대 키워드 -->
+  <!-- 연구요약 -->
   <section>
-    <div class="section-label">Keywords</div>
-    <h2>4대 중심 키워드 (세로축)</h2>
-    <p>이 네 범주가 각 역사적 변곡점을 통과하며 어떻게 변형·왜곡·회복되었는가를 추적한다.</p>
-    <div class="keyword-grid">
-      <div class="keyword-card">
-        <div class="keyword-ko">몸</div>
-        <div class="keyword-en">Embodiment</div>
+    <div class="section-label">연구요약</div>
+    <h2>방법론 및 분석 대상</h2>
+
+    <h3>방법론</h3>
+    <p>지성사(intellectual history) 방법론에 따라, 각 변곡점의 사상적 맥락 속에서 핵심 인물의 텍스트를 분석하고 그것이 체화된 관계성의 세 축에 미친 영향을 추적한다. 각 변곡점은 위기와 신학적 응답의 쌍으로 구성된다.</p>
+
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-badge sync">공시적 분석 · Synchronic</div>
+        <p>몸·관계·공동체가 해당 시대에 어떻게 <strong>동시에</strong> 재편되었는가 — 세 축을 분리된 주제가 아닌 하나의 단면으로 읽는다</p>
       </div>
-      <div class="keyword-card">
-        <div class="keyword-ko">영혼</div>
-        <div class="keyword-en">Soul / Spirit</div>
-      </div>
-      <div class="keyword-card">
-        <div class="keyword-ko">관계</div>
-        <div class="keyword-en">Relationality</div>
-      </div>
-      <div class="keyword-card">
-        <div class="keyword-ko">행복</div>
-        <div class="keyword-en">Beatitudo</div>
+      <div class="method-card">
+        <div class="method-badge dia">통시적 분석 · Diachronic</div>
+        <p>재편 패턴이 5개 변곡점을 가로지르며 어떻게 <strong>반복·변형</strong>되는가 — 인과적 연결보다 패턴의 유사성과 연결점을 열린 방식으로 포착한다</p>
       </div>
     </div>
-    <p style="font-size:13px; color:#6a6a8a;">* 삼위일체는 독립 세로축이 아닌 <em>신학적 토대</em>로 각 챕터에서 필요시 소환한다.</p>
-  </section>
 
-  <!-- 4막 구조 -->
-  <section>
-    <div class="section-label">Structure</div>
-    <h2>4막 구조 (팀 전체)</h2>
-    <div class="acts-grid">
-      <div class="act-card">
-        <div class="act-number">I</div>
-        <div class="act-title">성서 본문</div>
-        <p class="act-desc">몸·영혼·관계·행복을 어떻게 논했는가</p>
-        <p class="act-desc" style="margin-top:8px; font-size:11px; color:#aaa;">성서학</p>
-      </div>
-      <div class="act-card highlight">
-        <div class="act-badge">본 파트</div>
-        <div class="act-number">II</div>
-        <div class="act-title">역사적 변곡점</div>
-        <p class="act-desc">성서 텍스트를 각 시대가 어떻게 해석·적용했는가</p>
-        <p class="act-desc" style="margin-top:8px; font-size:11px; opacity:0.5;">역사신학</p>
-      </div>
-      <div class="act-card">
-        <div class="act-number">III</div>
-        <div class="act-title">현대적 통찰</div>
-        <p class="act-desc">현시대에 텍스트가 주는 통찰 (AI 시대 포함)</p>
-        <p class="act-desc" style="margin-top:8px; font-size:11px; color:#aaa;">조직신학</p>
-      </div>
-      <div class="act-card">
-        <div class="act-number">IV</div>
-        <div class="act-title">실천적 적용</div>
-        <p class="act-desc">체현된 관계성의 심리학적 번역·척도개발·교육적 구현</p>
-        <p class="act-desc" style="margin-top:8px; font-size:11px; color:#aaa;">심리·상담·교육학</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 변곡점 -->
-  <section>
-    <div class="section-label">Historical Turning Points</div>
-    <h2>5개 역사적 변곡점 — 위기와 신학적 응답</h2>
-    <p>각 변곡점은 <strong>위기(Crisis)</strong>와 <strong>신학적 응답(Response)</strong>의 쌍으로 구성된다.</p>
+    <h3>분석 대상 — 5개 역사적 변곡점</h3>
+    <p style="margin-bottom:20px;">분석 범위는 각 변곡점의 핵심 인물 텍스트로 한정한다.</p>
 
     <div class="timeline">
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">BC 3세기 — AD 4세기 · Ch.1</div>
-        <div class="timeline-title">헬레니즘·영지주의 + 초대교회 응답</div>
-        <div class="crisis-response">
-          <div class="cr-box crisis">
-            <div class="cr-label">위기</div>
-            플라톤적 존재 위계 유입 → 물질의 실재성·선함 부정. 창조·성육신·부활의 총체적 위기
-          </div>
-          <div class="cr-box response">
-            <div class="cr-label">신학적 응답</div>
-            이레나이우스·터툴리안: 창조의 선함, 몸의 부활, 성육신의 실재성 방어
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">13세기 · Ch.2</div>
-        <div class="timeline-title">중세 아리스토텔레스 수용</div>
-        <div class="crisis-response">
-          <div class="cr-box crisis">
-            <div class="cr-label">위기</div>
-            아베로에스의 단일 지성론(monopsychism) → 개별 영혼의 고유성 붕괴. 창조된 개별 존재로서의 인간 전체가 해체될 위기
-          </div>
-          <div class="cr-box response">
-            <div class="cr-label">신학적 응답</div>
-            아퀴나스: 질료형상론으로 몸-영혼 통합, 개별 영혼의 고유성 회복
+      <div class="tl-item">
+        <div><div class="tl-dot"></div></div>
+        <div class="tl-content">
+          <div class="tl-period">① 초대교회</div>
+          <div class="tl-title">플라톤 철학·영지주의와의 충돌</div>
+          <div class="tl-person">아우구스티누스</div>
+          <div class="tl-row">
+            <div class="tl-box crisis">
+              <div class="tl-box-label">위기</div>
+              물질·몸의 폄하, 이원론적 인간관 유입 — 체화된 관계성의 존재론적 토대 위협
+            </div>
+            <div class="tl-box response">
+              <div class="tl-box-label">신학적 응답 및 한계</div>
+              마니교적 이원론을 거부하고 몸을 선한 창조물로 긍정하며, 죄의 원인을 몸이 아니라 무질서한 의지에서 찾음. 인간의 본성적 사회성을 하나님의 창조 설계로 정당화하고, 우정·결혼·공동체적 사랑(caritas)의 신학적 토대를 마련. 다만 감각과 욕구에 대한 엄격한 절제를 요구했으며, 관계의 궁극적 토대를 몸보다 이성적 영혼에 두는 경향을 완전히 벗어나지는 못함
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">15~16세기 · Ch.3</div>
-        <div class="timeline-title">르네상스 + 종교개혁</div>
-        <div class="crisis-response">
-          <div class="cr-box crisis">
-            <div class="cr-label">위기</div>
-            인간 주체의 발견과 신학적 균열. 자율적 인간 주체(르네상스) vs 전적 타락·노예의지(종교개혁). 중세적 권위 해체로 개인화의 씨앗
-          </div>
-          <div class="cr-box response">
-            <div class="cr-label">신학적 응답</div>
-            <strong>소명론(vocatio)</strong>: 행복·번영을 일상적 삶 안에서 재정의. <strong>언약론(foedus)</strong>: 관계를 공동체적 언약 구조로 재설정. 그러나 개인화를 역설적으로 가속
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">17~19세기 · Ch.4</div>
-        <div class="timeline-title">과학혁명·데카르트 + 계몽주의·낭만주의</div>
-        <div class="crisis-response">
-          <div class="cr-box crisis">
-            <div class="cr-label">위기</div>
-            몸=기계(res extensa). 사유하는 개인 주체가 진리의 출발점. 관계·공동체·행복이 사적·내면적 영역으로 축소
-          </div>
-          <div class="cr-box response">
-            <div class="cr-label">신학적 응답</div>
-            낭만주의·경건주의: 감성·공동체·영성 복권 시도. 그러나 데카르트 문법 안에서의 반동이라는 한계
+      <div class="tl-item">
+        <div><div class="tl-dot"></div></div>
+        <div class="tl-content">
+          <div class="tl-period">② 중세</div>
+          <div class="tl-title">아리스토텔레스주의의 수용과 긴장</div>
+          <div class="tl-person">아퀴나스</div>
+          <div class="tl-row">
+            <div class="tl-box crisis">
+              <div class="tl-box-label">위기</div>
+              지성 단일설(monopsychism) — 개별 몸과 영혼의 고유성 붕괴, 관계적 책임과 공동체 권위의 재편
+            </div>
+            <div class="tl-box response">
+              <div class="tl-box-label">신학적 응답 및 한계</div>
+              질료형상론으로 몸-영혼의 통합적 실체를 논증하고 지성 단일설에 맞서 개별 인격의 고유성 회복. 중세 기준으로 이례적으로 몸과 육체적 욕구를 인간 본성의 자연스러운 부분으로 긍정. 자기사랑에서 우정으로 이어지는 관계의 형이상학적 토대를 마련하고, 삼위일체 내 관계를 신적 실체와 동일시함. 다만 피조물 차원에서 관계는 실체에 부수적인 우유(accident)로 남음
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-period">19세기 말 — 20세기 후반 · Ch.5</div>
-        <div class="timeline-title">이성의 파산과 주체의 해체</div>
-        <p style="font-size:12px; color:#aaa; margin-bottom:12px;">니체 · 세계대전 · 실존주의 · 포스트모더니즘</p>
-        <div class="crisis-response">
-          <div class="cr-box crisis">
-            <div class="cr-label">위기</div>
-            <strong>이성의 파산</strong>: 니체의 신 죽음 선언 + 세계대전으로 이성·진보 신화 붕괴. <strong>주체의 해체</strong>: 푸코·데리다·레비나스에 의해 보편 주체가 권력의 산물임이 폭로. 토대 전체 상실
-          </div>
-          <div class="cr-box response">
-            <div class="cr-label">신학적 응답</div>
-            레비나스의 타자 윤리, 공동체주의(매킨타이어), 실존주의 신학(틸리히·본회퍼): 관계·공동체·몸의 재발견 시도
+      <div class="tl-item">
+        <div><div class="tl-dot"></div></div>
+        <div class="tl-content">
+          <div class="tl-period">③ 르네상스·종교개혁</div>
+          <div class="tl-title">인간 주체의 재발견과 균열</div>
+          <div class="tl-person">루터 / 칼뱅</div>
+          <div class="tl-row">
+            <div class="tl-box crisis">
+              <div class="tl-box-label">위기</div>
+              자율적 인간 주체의 부상 — 공동체적 권위 해체, 관계의 개인화 가속
+            </div>
+            <div class="tl-box response">
+              <div class="tl-box-label">신학적 응답 및 한계</div>
+              루터: 부활의 육체성을 강조하고 수도원적 몸 경시를 명시적으로 거부. 만인제사장론으로 일상적 몸의 삶과 결혼을 신앙의 장으로 격상. 사랑을 욕망이 아닌 섬김으로 정의하고, 소명론을 통해 가정·직장·이웃 등 일상적 관계를 영적 훈련의 장으로 재정립. 칼뱅: 창조의 선함과 몸을 긍정하고, 하나님의 형상에 근거한 평등한 관계 윤리를 도출. 언약론을 통해 하나님과의 관계가 타인을 향한 공동체적 의무를 직접 생성함을 논증하고, 경건이 공동체 안에서 체현되어야 함을 강조. 다만 종교개혁의 개인과 하나님의 직접적 관계 강조가 이후 역사적 전개에서 공동체보다 개인화를 가속하는 결과를 낳음
+            </div>
           </div>
         </div>
       </div>
 
+      <div class="tl-item">
+        <div><div class="tl-dot"></div></div>
+        <div class="tl-content">
+          <div class="tl-period">④ 과학혁명·계몽주의</div>
+          <div class="tl-title">이원론적 인간관의 심화</div>
+          <div class="tl-person">조나단 에드워즈</div>
+          <div class="tl-row">
+            <div class="tl-box crisis">
+              <div class="tl-box-label">위기</div>
+              몸=기계(res extensa), 사유하는 개인 주체 — 관계·공동체·몸이 사적·내면적 영역으로 축소
+            </div>
+            <div class="tl-box response">
+              <div class="tl-box-label">신학적 응답 및 한계</div>
+              데카르트적 이원론과 기계론적 세계관이 지배하는 시대에, 몸을 영적 투쟁의 장소이자 부활을 통해 회복될 실재로 긍정. 사랑(charity)을 모든 덕의 근원으로 보고, 하나님과의 관계가 이웃과 인류 전체를 향한 사랑으로 흘러나오는 관계적 구조를 논증. 분쟁을 공동체를 파괴하는 근본적 악으로 규정하고, 부흥운동을 통해 몸의 공동 현존 안에서 이루어지는 공동체적 종교 경험을 실천. 다만 몸을 하나님 마음 안의 관념으로 보는 철학적 관념론은 다른 방식으로 몸의 물질적 실재성을 약화시킬 수 있는 긴장을 남김
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div><div class="tl-dot"></div></div>
+        <div class="tl-content">
+          <div class="tl-period">⑤ 실존주의·포스트모더니즘</div>
+          <div class="tl-title">주체의 해체와 관계의 위기</div>
+          <div class="tl-person">본회퍼</div>
+          <div class="tl-row">
+            <div class="tl-box crisis">
+              <div class="tl-box-label">위기</div>
+              이성·진보 신화의 붕괴, 보편 주체의 해체 — 관계와 공동체의 토대 상실
+            </div>
+            <div class="tl-box response">
+              <div class="tl-box-label">신학적 응답</div>
+              탈세속적 영성을 거부하고 "인간은 몸을 가진 것이 아니라 몸이다"라고 선언하며 몸-영혼 이원론을 정면으로 거부. 몸을 통해 땅·타인·공동체와 근본적으로 연결된 존재로서의 인간을 논증. 하나님의 형상을 imago relationis로 해석하고, 자유를 타인을 위한 관계로 정의하며, "타인을 위한 존재(being-for-others)"를 그리스도인의 삶의 핵심으로 제시. 몸의 공동 현존과 공동체적 삶의 실천(Life Together)을 통해 관계적 책임으로서의 신앙을 구현
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note-box">
+      <div class="note-title">팀 연구 내 위치</div>
+      <p>본 파트는 팀 연구 1단계(인문학 중심)의 역사신학 하위섹션으로 1~2년차에 수행된다. 성서학 파트가 몸·관계·공동체의 원전 개념을 확립하면, 역사신학은 그 개념이 각 시대에 어떻게 수용·변형되었는지를 추적하는 상호 피드백 구조를 이룬다.</p>
     </div>
   </section>
 
-  <!-- 인과적 흐름 -->
+  <!-- 기대효과 -->
   <section>
-    <div class="section-label">Causal Flow</div>
-    <h2>변곡점 간 인과적 흐름</h2>
-    <div class="flow">
-      <div class="flow-item">
-        <span class="flow-num">1</span>
-        <span><span class="flow-highlight">물질·몸의 실재성 위기</span> → 성육신·창조론으로 응답</span>
+    <div class="section-label">기대효과</div>
+    <h2>연구의 학문적·실천적 기여</h2>
+    <p>체화된 관계성의 역사적 재편을 몸·관계·공동체의 연동 체계로 통합 서술한 역사신학적 분석으로서, 기존 연구에서 시도되지 않은 공시적·통시적 이중 접근을 제시한다.</p>
+
+    <div class="effect-grid">
+      <div class="effect-card">
+        <div class="effect-num">I</div>
+        <div class="effect-title">조직신학 파트</div>
+        <p class="effect-desc">현대적 재구성을 위한 역사적 자원 제공 — 각 시대의 신학적 응답이 오늘의 처방을 위한 개념적 토대가 된다</p>
       </div>
-      <div class="flow-arrow">↓</div>
-      <div class="flow-item">
-        <span class="flow-num">2</span>
-        <span><span class="flow-highlight">개별 영혼의 고유성 위기</span> → 질료형상론으로 응답</span>
+      <div class="effect-card">
+        <div class="effect-num">II</div>
+        <div class="effect-title">심리·상담학 파트</div>
+        <p class="effect-desc">체화된 관계 척도(Embodied Relationship Scale) 개발을 위한 개념적 근거 — 세 축의 역사적 의미를 심리학적 번역의 출발점으로 제공한다</p>
       </div>
-      <div class="flow-arrow">↓</div>
-      <div class="flow-item">
-        <span class="flow-num">3</span>
-        <span><span class="flow-highlight">인간 주체의 발견과 균열</span> → 소명론·언약론으로 응답 (개인화 가속의 역설)</span>
-      </div>
-      <div class="flow-arrow">↓</div>
-      <div class="flow-item">
-        <span class="flow-num">4</span>
-        <span><span class="flow-highlight">개인 주체의 절대화</span> → 낭만주의·경건주의로 응답 (한계 있음)</span>
-      </div>
-      <div class="flow-arrow">↓</div>
-      <div class="flow-item">
-        <span class="flow-num">5</span>
-        <span><span class="flow-highlight">이성의 파산 + 주체 자체의 붕괴</span> → 타자 윤리·공동체주의로 응답</span>
-      </div>
-      <div class="flow-arrow">↓</div>
-      <div class="flow-item">
-        <span class="flow-num" style="color:var(--gold-light);">→</span>
-        <span><span class="flow-highlight">AI 시대</span>: 몸+뇌를 모방한 존재의 등장, 디지털 매체가 탈육체화 야기 → 체현된 관계성의 본질 재질문 <em style="color:rgba(247,244,238,0.4)">(3막)</em></span>
+      <div class="effect-card">
+        <div class="effect-num">III</div>
+        <div class="effect-title">팀 연구 전체</div>
+        <p class="effect-desc">AI 시대의 관계 위기를 서구 지성사의 누적된 맥락 속에서 이해하는 인문학적 시각 — 위기의 현재성을 역사적 깊이 위에 위치시킨다</p>
       </div>
     </div>
-  </section>
-
-  <!-- 일정 -->
-  <section>
-    <div class="section-label">Schedule</div>
-    <h2>프로젝트 일정 (6년)</h2>
-
-    <div class="schedule-block">
-      <div class="schedule-label">이론 파트 — 1~3년차</div>
-      <table>
-        <thead>
-          <tr>
-            <th>연차</th>
-            <th>성서학 (1막)</th>
-            <th>역사신학 (2막)</th>
-            <th>조직신학 (3막)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1년차</td>
-            <td>구약: 네페쉬·루아흐·바사르·레브·샬롬</td>
-            <td>Ch.1 헬레니즘·영지주의 + 초대교회</td>
-            <td>—</td>
-          </tr>
-          <tr>
-            <td>2년차</td>
-            <td>신약: 소마·사르크스·프뉴마·코이노니아·마카리오스</td>
-            <td>Ch.2 중세 / Ch.3 르네상스·종교개혁</td>
-            <td>—</td>
-          </tr>
-          <tr>
-            <td>3년차</td>
-            <td>성서학·역사신학 통합 종합</td>
-            <td>Ch.4 과학혁명~낭만주의 / Ch.5 이성의 파산</td>
-            <td>AI 시대 통찰 + 조직신학적 재구성</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style="font-size:12px; color:#aaa; margin-top:10px;">* 성서학과 역사신학은 1~2년차 병행 연구. 성서학이 원전 개념을 확립하면 역사신학이 그 변천을 추적하는 상호 피드백 구조.</p>
-    </div>
-
-    <div class="schedule-block">
-      <div class="schedule-label">적용 파트 — 4~6년차</div>
-      <table>
-        <thead>
-          <tr><th>연차</th><th>내용</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>4년차</td><td>심리·상담학 적용 — 현황조사·질적연구·척도 개발</td></tr>
-          <tr><td>5년차</td><td>교육학 적용 및 커리큘럼 개발, AI 설계 원리 도출</td></tr>
-          <tr><td>6년차</td><td>통합 단행본 출판 + 실천 매뉴얼</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- 팀 연구 연결 -->
-  <section>
-    <div class="section-label">Team Connections</div>
-    <h2>팀 연구 핵심 개념과의 연결</h2>
-    <table class="concept-table">
-      <thead>
-        <tr><th>팀 연구 개념</th><th>역사신학 파트 연결</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>체현된 관계성</strong><br><em style="font-size:11px;color:#aaa;">embodied relationality</em></td>
-          <td>각 변곡점에서 몸·관계 세로축의 변천으로 추적</td>
-        </tr>
-        <tr>
-          <td><strong>무마찰적 친밀성</strong><br><em style="font-size:11px;color:#aaa;">frictionless intimacy</em></td>
-          <td>Ch.3~4의 개인화·내면화 과정의 역사적 뿌리</td>
-        </tr>
-        <tr>
-          <td><strong>AI ≠ 탈육체화</strong></td>
-          <td>AI는 인간을 모방한 것, 탈육체화의 기제는 디지털 매체</td>
-        </tr>
-        <tr>
-          <td><strong>성서적 관계존재론</strong></td>
-          <td>1막 성서학 파트와 연동, 역사적 수용사로 확장</td>
-        </tr>
-        <tr>
-          <td><strong>다시 몸으로·다시 관계로·다시 함께</strong></td>
-          <td>각 챕터의 신학적 응답이 반복적으로 지향한 방향</td>
-        </tr>
-      </tbody>
-    </table>
   </section>
 
 </main>
 
+<!-- ── FOOTER ── -->
 <footer>
-  역사신학 융합 프로젝트 · Historical Theology Research · 2026
+  <span>백석대학교 기독교학문연구소</span>
+  Institute for Christian Scholarship · Baekseok University · 2026
 </footer>
 
 </body>
