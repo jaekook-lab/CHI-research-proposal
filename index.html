@@ -435,6 +435,44 @@
     margin: 0;
   }
 
+  /* ── BIBLIOGRAPHY ── */
+  .bib-list {
+    margin-top: 8px;
+  }
+  .bib-group {
+    display: grid;
+    grid-template-columns: clamp(140px, 20%, 180px) 1fr;
+    gap: 0 clamp(16px, 3vw, 28px);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .bib-group:last-child {
+    border-bottom: none;
+  }
+  @media (max-width: 560px) {
+    .bib-group {
+      grid-template-columns: 1fr;
+      gap: 4px 0;
+    }
+  }
+  .bib-author {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(11px, 1.5vw, 12px);
+    font-weight: 600;
+    color: var(--ink);
+    padding-top: 2px;
+    line-height: 1.7;
+  }
+  .bib-entries p {
+    font-size: clamp(11px, 1.5vw, 12px);
+    line-height: 1.85;
+    color: #4a4a6a;
+    margin-bottom: 8px;
+  }
+  .bib-entries p:last-child {
+    margin-bottom: 0;
+  }
+
   /* ── FOOTER ── */
   footer {
     background: var(--ink);
@@ -651,6 +689,128 @@
         <div class="effect-title">팀 연구 전체</div>
         <p class="effect-desc">AI 시대의 관계 위기를 서구 지성사의 누적된 맥락 속에서 이해하는 인문학적 시각 — 위기의 현재성을 역사적 깊이 위에 위치시킨다</p>
       </div>
+    </div>
+  </section>
+
+  <!-- 참고문헌 -->
+  <section>
+    <div class="section-label">References</div>
+    <h2>참고문헌</h2>
+    <div class="bib-list">
+
+      <div class="bib-group">
+        <div class="bib-author">Augustine, Saint.</div>
+        <div class="bib-entries">
+          <p><em>Answer to the Pelagians, II</em>. Edited by John E. Rotelle. Translated by Roland J. Teske. The Works of Saint Augustine: A Translation for the 21st Century, vol. 24. Hyde Park, NY: New City Press, 1998.</p>
+          <p>———. <em>City of God</em>. Edited by Boniface Ramsey. Translated by William Babcock. The Works of Saint Augustine: A Translation for the 21st Century, vol. 6. Hyde Park, NY: New City Press, 2012–2013.</p>
+          <p>———. <em>Marriage and Virginity: The Excellence of Marriage, Holy Virginity, The Excellence of Widowhood, Adulterous Marriages, Continence</em>. Edited by John E. Rotelle. Translated by Ray Kearney. The Works of Saint Augustine: A Translation for the 21st Century. Hyde Park, NY: New City Press, 1999.</p>
+          <p>———. <em>St. Augustine on Marriage and Sexuality</em>. Edited by Elizabeth A. Clark. Selections from the Fathers of the Church, vol. 1. Washington, D.C.: The Catholic University of America Press, 1996.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Barnes, Corey.</div>
+        <div class="bib-entries">
+          <p>"Thomas Aquinas on the Body and Bodily Passions." In <em>The Embrace of Eros: Bodies, Desires, and Sexuality in Christianity</em>, edited by Margaret D. Kamitsuka, 83–84. Minneapolis, MN: Fortress Press, 2010.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Brock, Brian, and John Swinton, eds.</div>
+        <div class="bib-entries">
+          <p><em>Disability in the Christian Tradition: A Reader</em>. Grand Rapids, MI: Eerdmans, 2012.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Calvin, John.</div>
+        <div class="bib-entries">
+          <p><em>Calvin's Aphorisms and Letter to Francis the First: In Defense of the Reformation</em>. London: Whittaker and Co., 1844.</p>
+          <p>———. <em>John Calvin: Writings on Pastoral Piety</em>. Edited by Elsie Anne McKee and Bernard McGinn. Translated by Elsie Anne McKee. The Classics of Western Spirituality. New York; Mahwah, NJ: Paulist Press, 2001.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Edgar, William, and K. Scott Oliphint, eds.</div>
+        <div class="bib-entries">
+          <p><em>Christian Apologetics Past and Present: A Primary Source Reader, From 1500</em>. Wheaton, IL: Crossway, 2011.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Edwards, Jonathan.</div>
+        <div class="bib-entries">
+          <p><em>Charity and Its Fruits: Living in the Light of God's Love</em>. Edited by Kyle Strobel. Wheaton, IL: Crossway, 2019.</p>
+          <p>———. <em>The "Blank Bible": Part 1 &amp; Part 2</em>. Edited by Stephen J. Stein and Harry S. Stout. The Works of Jonathan Edwards, vol. 24. New Haven; London: Yale University Press, 2006.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Flood, Anthony T.</div>
+        <div class="bib-entries">
+          <p><em>The Metaphysical Foundations of Love: Aquinas on Participation, Unity, and Union</em>. Edited by Matthew Levering and Thomas Joseph White. Thomistic Ressourcement Series, vol. 10. Washington, D.C.: The Catholic University of America Press, 2018.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Green, Clifford J.</div>
+        <div class="bib-entries">
+          <p>"Editor's Introduction to the English Edition." In <em>Ethics</em>, edited by Ilse Tödt, Heinz Eduard Tödt, and Ernst Feil, translated by Reinhard Krauss, Charles C. West, and Douglas W. Stott. Dietrich Bonhoeffer Works, vol. 6. Minneapolis, MN: Fortress Press, 2005.</p>
+          <p>———. "Editor's Introduction To the English Edition." In <em>Fiction from Tegel Prison</em>, edited by Renate Bethge and Ilse Tödt, translated by Nancy Lukens. Dietrich Bonhoeffer Works, vol. 7. Minneapolis, MN: Fortress Press, 2000.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Koopman, Nico.</div>
+        <div class="bib-entries">
+          <p>"Bonhoeffer, South Africa, and Global Contexts." In <em>The Oxford Handbook of Dietrich Bonhoeffer</em>, edited by Michael Mawson and Philip G. Ziegler, 417–434. Oxford Handbooks. New York: Oxford University Press, 2019.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Kyle, Eric J.</div>
+        <div class="bib-entries">
+          <p><em>Spiritual Being and Becoming: Western Christian and Modern Scientific Views of Human Nature for Spiritual Formation</em>. Eugene, Oregon: Pickwick Publications, 2015.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Luther, Martin.</div>
+        <div class="bib-entries">
+          <p><em>Conversations with Luther: Selections from Recently Published Sources of the Table Talk</em>. Edited and translated by Preserved Smith and Herbert Percival Gallinger. Boston; New York; Chicago: The Pilgrim Press, 1915.</p>
+          <p>———. <em>The Interpretation of Scripture</em>. Edited by Euan K. Cameron et al. The Annotated Luther, vol. 6. Minneapolis, MN: Fortress Press, 2017.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Ramsey, Paul.</div>
+        <div class="bib-entries">
+          <p>"Editor's Introduction." In <em>Ethical Writings</em>, edited by Paul Ramsey and John E. Smith. The Works of Jonathan Edwards, vol. 8. New Haven; London: Yale University Press, 1989.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Rasmussen, Larry L.</div>
+        <div class="bib-entries">
+          <p>"Editor's Introduction to the English Edition." In <em>Berlin: 1932–1933</em>, edited by Carsten Nicolaisen and Ernst-Albert Scharffenorth, translated by Isabel Best, David Higgins, and Douglas W. Stott. Dietrich Bonhoeffer Works, vol. 12. Minneapolis, MN: Fortress Press, 2009.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Schopp, Ludwig.</div>
+        <div class="bib-entries">
+          <p>"Foreword." In <em>The Happy Life and Answer to Skeptics and Divine Providence and the Problem of Evil and Soliloquies</em>, edited by Ludwig Schopp, translated by Denis J. Kavanagh et al. The Fathers of the Church, vol. 5. New York: CIMA Publishing Co., Inc., 1948.</p>
+        </div>
+      </div>
+
+      <div class="bib-group">
+        <div class="bib-author">Strohl, Jane E.</div>
+        <div class="bib-entries">
+          <p>"General Introduction." In <em>Luther's Spirituality</em>, edited by Philip D. W. Krey, Bernard McGinn, and Peter D. S. Krey, translated by Peter D. S. Krey and Philip D. W. Krey. The Classics of Western Spirituality. New York; Mahwah, NJ: Paulist Press, 2007.</p>
+          <p>———. "Luther's Eschatology." In <em>The Oxford Handbook of Martin Luther's Theology</em>, edited by Robert Kolb et al., 355–367. Oxford Handbooks. Oxford; New York: Oxford University Press, 2014.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
